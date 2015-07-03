@@ -100,7 +100,7 @@
 		
 		var plane = new THREE.Mesh(new THREE.PlaneGeometry(30000, 30000), new THREE.MeshNormalMaterial());
       		plane.overdraw = true;
-      		plane.rotate.x = 3
+      		plane.rotation.z += 3;
       		scene.add(plane);
       		
 		// We set the renderer to the size of the window and
