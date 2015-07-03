@@ -98,10 +98,10 @@
 			scene.add( object );
 		});
 		
-		var geometry = new THREE.PlaneGeometry( 0, 0, 0 );
-		var material = new THREE.MeshBasicMaterial( {color: 0x448f30, side: THREE.DoubleSide} );
-		var plane = new THREE.Mesh( geometry, material );
-		scene.add( plane );
+		var plane = new THREE.Mesh(new THREE.PlaneGeometry(300, 300), new THREE.MeshNormalMaterial());
+      		plane.overdraw = true;
+      		scene.add(plane);
+      		
 		// We set the renderer to the size of the window and
 		// append a canvas to our HTML page.
 		renderer = new THREE.WebGLRenderer();
