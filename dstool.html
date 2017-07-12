@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Digital Services Team Tools</title>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/xregexp-all-min.js"></script>
+		
+		<!--Script to hide each div-->
+		<script type="text/javascript" src="js/DivHide.js"></script>
+		
+		<!--Code behind each tool. Indent represents relation to higher script-->
+		<script type="text/javascript" src="js/LinkFixer.js"></script>
+		<script type="text/javascript" src="js/SoResponsibility.js"></script>
+		<script type="text/javascript" src="js/SpaceRemover.js"></script>
+		<script type="text/javascript" src="js/Transliteration.js"></script>
+		<!-- --><script type="text/javascript" src="js/fold-to-ascii.js"></script>
+	<meta name="UOA.sitepath" content="/library/staff">
+<meta name="TITLE" content="Digital Services Team Tools">
+</head>
+		<body>
+			<div id="LinkFixer_Description">
+				<b>Equella Hyperlink</b>
+				<p>Cleaner (remove spaces) and Proxy adder for Equella links</p>
+				<a href="javascript:showDiv('LinkFixer')">Show</a> / <a href="javascript:hideDiv('LinkFixer')">Hide</a>
+				<div id="LinkFixer" style="display:none">
+					<p><b>Clean:</b> <input id="CleanInput" value="" type="text"></p>
+					<p id="CleanLink">Hyperlink: </p>
+					<p><b>Proxy:</b> <input id="ProxyInput" value="" type="text"></p>
+					<p id="ProxyLink">Hyperlink: </p>
+				</div>
+			</div>
+			<div id="StatementofResponsibility_Description">
+				<br><b>Statement of Responsibility Cleaner</b>
+				<p>Removes new lines, multiple spaces, non-alpha|comma|fullstop characters, and multiple commas (Supports Diacritics)</p>
+				<a href="javascript:showDiv('StatementofResponsibility')">Show</a> / <a href="javascript:hideDiv('StatementofResponsibility')">Hide</a>
+				<div id="StatementofResponsibility" style="display:none">
+						<p></p>
+						<table width="100%">
+							<colgroup>
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<td height="100%" width="50%">
+										<textarea id="SORInput" tabindex="0" style="width: 97%; resize: none;" rows="20"></textarea>
+									</td>
+									<td height="100%" width="50%">
+										<textarea id="SOROutput" tabindex="0" readonly="readonly" style="width: 97%; resize: none;" rows="20"></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+			</div>
+			<div id="SpaceRemover_Description">
+				<br><b>Space and Newline Remover</b>
+				<p>Removes new lines, multiple spaces. Does not affect text</p>
+				<a href="javascript:showDiv('SpaceRemover')">Show</a> / <a href="javascript:hideDiv('SpaceRemover')">Hide</a>
+				<div id="SpaceRemover" style="display:none">
+					<table width="100%">
+						<colgroup>
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<td height="100%" width="50%">
+									<textarea id="SRInput" tabindex="0" style="width: 97%; resize: none;" rows="20"></textarea>
+								</td>
+								<td height="100%" width="50%">
+									<textarea id="SROutput" tabindex="0" readonly="readonly" style="width: 97%; resize: none;" rows="20"></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="Transliteration_Description">
+				<br><b>Transliteration Tool</b>
+				<p>Paste Title containing non-keyboard (ASCII) character into the left box. You may need to enter a space at the end of the title.</p>
+				<a href="javascript:showDiv('Transliteration')">Show</a> / <a href="javascript:hideDiv('Transliteration')">Hide</a>
+				<div id="Transliteration" style="display:none">
+					<div>
+						<table>
+							<colgroup>
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<td height="100%" width="1500px">
+										<textarea id="TRANSInput" tabindex="0" style="width: 97%; resize: none;" rows="20"></textarea>
+									</td>
+									<td height="100%" width="1500px">
+										<textarea id="TRANSOutput" tabindex="0" readonly="readonly" style="width: 97%; resize: none;" rows="20"></textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+				</div>
+				<b><p id="changed"></p></b>
+				<p>Elements</p>
+				<div id="elements">
+				</div>
+				<div>
+						<p>Unknown Characters:</p>
+						<p id="unknown"></p>
+				</div>
+			</div>
+		</body>
+</html>
