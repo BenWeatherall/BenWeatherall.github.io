@@ -1,0 +1,277 @@
+Character;Meaning
+√;root
+ₔ;schwa
+ʰ;h
+ʱ;h with hook
+ʲ;j
+ʳ;r
+ʴ;r
+ʵ;f
+ʶ;R
+ʷ;w
+ʸ;y
+ˀ;glottal stop
+ˠ;Velarization
+ˡ;lateral release
+ˢ;s
+ˣ;x
+ˤ;c
+ᴬ;A
+ᴭ;AE
+ᴮ;B
+ᴯ;B
+ᴰ;D
+ᴱ;E
+ᴲ;E
+ᴳ;G
+ᴴ;H
+ᴵ;I
+ᴶ;J
+ᴷ;K
+ᴸ;L
+ᴹ;M
+ᴺ;N
+ᴻ;N
+ᴼ;O
+ᴽ;Ou
+ᴾ;P
+ᴿ;R
+ᵀ;T
+ᵁ;U
+ᵂ;W
+ᵃ;a
+ᵄ;a
+ᵅ;a
+ᵆ;ae
+ᵇ;b
+ᵈ;d
+ᵉ;e
+ᵊ;e
+ᵋ;e
+ᵌ;e
+ᵍ;g
+ᵎ;!
+ᵏ;k
+ᵐ;m
+ᵑ;n
+ᵒ;o
+ᵓ;o
+ᵔ;o
+ᵕ;o
+ᵖ;p
+ᵗ;t
+ᵘ;u
+ᵙ;u
+ᵚ;m
+ᵛ;v
+ᵜ;ain
+ᵝ;beta
+ᵞ;gamma
+ᵟ;delta
+ᵠ;phi
+ᵡ;chi
+ᵦ;beta
+ᵧ;gamma
+ᵨ;rho
+ᵩ;psi
+ᵪ;X
+ᵸ;H
+ᶛ;alpha
+ᶜ;c
+ᶝ;c
+ᶞ;eth
+ᶟ;e
+ᶠ;f
+ᶡ;f
+ᶢ;g
+ᶣ;h
+ᶤ;i
+ᶥ;iota
+ᶦ;I
+ᶧ;I
+ᶨ;j
+ᶩ;l
+ᶪ;l
+ᶫ;L
+ᶬ;m
+ᶭ;turned m
+ᶮ;n
+ᶯ;n
+ᶰ;N
+ᶱ;theta
+ᶲ;phi
+ᶳ;s
+ᶴ;esh
+ᶵ;t
+ᶶ;u bar
+ᶷ;upsilon
+ᶸ;u
+ᶹ;u
+ᶺ;turned v
+ᶻ;z
+ᶼ;z
+ᶽ;z
+ᶾ;ezh
+ᶿ;theta
+ⱽ;V
+ð;eth
+Α;Alpha
+Β;Beta
+Γ;Gamma
+Δ;Delta
+Ε;Epsilon
+Ζ;Zeta
+Θ;Theta
+Ι;Iota
+Κ;Kappa
+Λ;Lambda
+Μ;Mu
+Ν;Nu
+Ξ;Xi
+Ο;Omicron
+Π;Pi
+Ρ;Rho
+Σ;Sigma
+Τ;Tau
+Υ;Upsilon
+Φ;Phi
+Ψ;Psi
+Ω;Omega
+α;alpha
+β;beta
+γ;gamma
+δ;delta
+ε;epsilon
+ζ;zeta
+θ;theta
+ι;iota
+κ;kappa
+λ;lambda
+μ;mu
+ν;nu
+ξ;xi
+ο;omicron
+π;pi
+ρ;rho
+σ;sigma
+τ;tau
+υ;upsilon
+φ;phi
+ψ;psi
+ω;omega
+¢;cents
+£;pounds
+¥;yen
+€;euros
+ₔ;schwa
+±;+/-
+×;x
+÷;/
+¼;1/4
+½;1/2
+¾;3/4
+∀;turned A
+∂;rounded d
+∃;there exists
+∅;the empty set
+∆;symmetric difference
+∇;Nabla
+∈;is an element of
+∉;is not an element of
+∋;such that
+∌;does not contain as an element
+∏;product
+∐;coproduct
+∑;summation
+∛;cubed root
+∜;fourth root
+∝;is proportional to
+∞;-infinity
+∧;and
+∨;or
+∩;intersection
+∪;union
+∫;integral
+≠;not equal to
+≡;triple bar
+≤;</=
+≥;>/=
+™;(TM)
+©;(c)
+®;(R)
+°;degrees
+·;(.)
+←;<-
+↑;upwards arrow
+→;->
+↓;downwards arrow
+∊;is an element of
+∍;such that
+∄;there does not exist
+Χ;Chi
+χ;chi
+Η;Eta
+η;eta
+ς;sigma
+∙;(.)
+♥;love
+∓;-/+
+―;-
+…;...
+⟨;<
+⟩;>
+،;,
+、;,
+ ;
+ ;
+•;(.)
+−;-
+«;<<
+»;>>
+„;,,
+℗;(P)
+℠;(SM)
+‖;|
+µ;mu
+µm;micrometers
+μm;micrometers
+ϕ;Phi
+ℓ;l
+ℒ;L
+∕;/
+�;A
+�;a
+�;B
+�;b
+ℂ;C
+�;c
+�;D
+�;d
+ⅅ;D
+ⅆ;d
+�;E
+ⅇ;e
+ℍ;H
+ⅈ;i
+ⅉ;j
+ℕ;N
+ℙ;P
+ℚ;Q
+ℝ;R
+ℤ;Z
+═;=
+〉;>
+〈;<
+‾;-bar
+◌̅;-bar
+¯;-bar
+V̇;V'
+ʻ;'
+б;b
+ ; 
+∼;~
+≲;</~
+¡;!
+º;o
+;Upsilon
+ɛ;Epsilon
