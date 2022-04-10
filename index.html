@@ -1,128 +1,282 @@
-<!-- saved from url=(0034)http://subtilis.net/ThreePage.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-	<title>WebGL 3D model viewer using three.js</title>
-	<script src="./js/three.js"></script>
-	<script src="./js/TrackballControls.js"></script>
-	<script src="./js/OBJLoader.js"></script>
-	<script src="./js/Detector.js"></script>
-</head>
-<body>
-<h1>Test</h1>
-<script>
-	var container;
-	var camera, scene, renderer;
-	var mouseX = 0; mouseY = 0;
-	
-	var windowHalfX = window.innerWidth / 2;
-	var windowHalfY = window.innerHeight / 2;
-	
-	init();
-	animate();
-	
-	/*** Initialise ***/
-	function init() {
-		container = document.createElement( 'div' );
-		document.body.appendChild( container );
-		
-		// you can adjust the cameras distance and set the FOV to something
-		// different than 45 degrees. The last two values set the clipping plane.
-		camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 50000 );
-		camera.position.z = 10000;
-		camera.position.x = 15000;
-		// camera.position.y = 20000;
-		
-		// These variables set the camera behaviour and sensitivity.
-		controls = new THREE.TrackballControls( camera );
-		controls.rotateSpeed = 5.0;
-		controls.zoomSpeed = 5;
-		controls.panSpeed = 2;
-		controls.noZoom = false;
-		controls.NoPan = false;
-		controls.staticMoving = true;
-		controls.dynamicDampingFactor = 0.3;
-		
-		// This is the scene we will add all our objects to.
-		scene = new THREE.Scene();
-		
-		//You can set the color of the ambient light to any value.
-		//I have chosen a completely white light because I want to paint
-		//all the shading into my texture. You probably want something darker.
-		var ambient = new THREE.AmbientLight( 0x000000 );
-		scene.add( ambient );
-		
-		// Uncomment these lines to create a simple directional light.
-		// var directionalLight = new THREE.DirectionalLight( 0xffeedd );
-		// directionalLight.position.set( 0, 0, 1).normalize();
-		// scene.add( directionalLight );
-		
-		/*** Texture Loading ***/
-		var manager = new THREE.LoadingManager();
-		manager.onProgress = function( item, loaded, total ){
-			console.log(item, loaded, total);
-		};
-		var texture = new THREE.Texture();
-		var loader = new THREE.ImageLoader( manager );
-		
-		// You can set the texture properties in this function.
-		// The string has to be the path to your texture file.
-		loader.load( '3D/texture/aquatic.jpg', function ( image ) {
-			texture.image = image;
-			texture.needsUpdate = true;
-			// I wanted a nearest neighbour filtering for my low-poly character,
-			// so that every pixel is crisp and sharp. You can delete this lines
-			// if have a larger texture and want a smooth linear filter.
-			texture.magFilter = THREE.NearestFilter;
-			texture.minFilter = THREE.NearestMipMapLinearFiler;
-		} );
-		
-		/*** OBJ Loading ***/
-		var loader = new THREE.OBJLoader( manager );
-		
-		// As soon as the OBJ has been loaded this function looks for a mesh
-		// inside the data and applies the texture to it.
-		loader.load( '3D/model/aquatic.obj', function( event ){
-			var object = event;
-			object.traverse( function( child ) {
-				if (child instanceof THREE.Mesh ) {
-					child.material.map = texture;
-				}
-			} );
-			
-			// My initial model was too small, so I scaled it upwards.
-			object.scale = new THREE.Vector3( 10, 10, 10 );
-			
-			// You can change the poition of the object, so that it is not 
-			// centered in the view and leaves some space for overlay text.
-			// object.position.y += 25;
-			scene.add( object );
-		});
-		
-		var plane = new THREE.Mesh(new THREE.PlaneGeometry(30000, 30000), new THREE.MeshNormalMaterial());
-      		plane.overdraw = true;
-      		plane.rotation.x += 180;
-      		scene.add(plane);
-      		
-		// We set the renderer to the size of the window and
-		// append a canvas to our HTML page.
-		renderer = new THREE.WebGLRenderer();
-		// renderer.setSize( window.innerWidth, window.innerHeight );
-		renderer.setSize( windowHalfX, windowHalfY );
-		container.appendChild( renderer.domElement );
-	}
-	
-	/*** The Loop ***/
-	function animate() {
-		// This function calls itself on every frame. You can for example change
-		// the objects rotation on every call to create a turntable animation.
-		requestAnimationFrame( animate );
-		
-		// On every frame we need to calculate the new camera position
-		// and have it look exactly at the center of our scene.
-		controls.update()
-		camera.lookAt(scene.position);
-		renderer.render(scene, camera);
-	}
-</script><div><canvas width="960" height="475" style="width: 960px; height: 475.5px;"></canvas></div>
+<!-- Derived from tutorial: https://www.freecodecamp.org/news/how-to-build-a-developer-portfolio-website/
+	 by Kolade Chris (https://github.com/Ksound22/developer-portfolio/) -->
+	 <!DOCTYPE html>
+	 <html lang="en">
+	   <head>
+		 <meta charset="UTF-8" />
+		 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	 
+		 <!--CSS Styles -->
+		 <link rel="stylesheet" href="assets/css/styles.css" />
+	 
+		 <!-- Favicons -->
+		 <link
+		   rel="apple-touch-icon"
+		   sizes="180x180"
+		   href="assets/icons/apple-touch-icon.png"
+		 />
+		 <link
+		   rel="icon"
+		   type="image/png"
+		   sizes="32x32"
+		   href="assets/icons/favicon-32x32.png"
+		 />
+	 
+		 <!-- Animate CSS CDN -->
+		 <link
+		   rel="stylesheet"
+		   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		 />
+		 <title>Ben Weatherall | Software Developer</title>
+	   </head>
+	 
+	   <body>
+		 <!-- Navbar -->
+		 <nav>
+			<h1>Ben Weatherall</h1>
+			<ul class="navigation">
+			  <li><a href="#about" class="nav-link">About</a></li>
+			  <li><a href="#skills" class="nav-link">Skills</a></li>
+			  <li><a href="#projects" class="nav-link">Projects</a></li>
+			  <li><a href="#contact" class="nav-link">Contact</a></li>
+			</ul>
+			<button class="burger-menu" id="burger-menu">
+			  <ion-icon class="bars" name="menu-outline"></ion-icon>
+			</button>
+	  	</nav>
+	 
+		 <!-- Hero Section -->
+		 <section class="hero" id="about">
+			<img
+			  src="assets/images/me.jfif"
+			  alt="jane-doe"
+			  loading="lazy"
+			  class="hero-img"
+			/>
+			<div class="bio animate__animated animate__shakeX">
+			  <h2 class="bio-title">About Me</h2>
+			  <p class="bio-text">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed
+				dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus
+				inventore tempore minus nemo, iste ullam illo laboriosam maiores
+				repudiandae quos!
+			  </p>
+			</div>
+	 	 </section>
+		 <!-- More about -->
+		 <section class="more-about">
+			<h2>More About Me</h2>
+			<p>
+			  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+			  nesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,
+			  autem deleniti cupiditate molestias quis unde quae totam porro dicta
+			  iure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus
+			</p>
+			<p>
+			  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
+			  nostrum dolor minus, libero delectus praesentium perferendis
+			</p>
+			<p>
+			  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+			  consequuntur labore? Ea totam voluptas amet!
+			</p>
+		  </section>
+	 
+		 <!-- Skills section -->
+		 <section class="skills" id="skills">
+			<h2 class="skill-header">My Top Skills</h2>
+	  
+			<div class="skills-wrapper">
+			  <div class="first-set animate__animated animate__pulse">
+				<img
+				  src="assets/icons/icons8-html-5.svg"
+				  alt=""
+				  loading="lazy"
+				  class="icon icon-card"
+				/>
+				<img
+				  src="assets/icons/icons8-css3.svg"
+				  alt=""
+				  loading="lazy"
+				  class="icon icon-card"
+				/>
+				<img
+				  src="assets/icons/icons8-javascript.svg"
+				  alt=""
+				  loading="lazy"
+				  class="icon icon-card"
+				/>
+			  </div>
+	  
+			  <div class="second-set animate__animated animate__pulse">
+				<img
+				  src="assets/icons/icons8-bootstrap.svg"
+				  alt=""
+				  loading="lazy"
+				  class="icon icon-card"
+				/>
+				<img
+				  src="assets/icons/icons8-react-native.svg"
+				  alt=""
+				  loading="lazy"
+				  class="icon icon-card"
+				/>
+				<img
+				  src="assets/icons/icons8-git.svg"
+				  alt=""
+				  loading="lazy"
+				  class="icon icon-card"
+				/>
+			  </div>
+			</div>
+		  </section>
+	 
+		 <!-- Projects section -->
+		 <section class="projects" id="projects">
+			<h2 class="projects-title">Some of my Recent Projects</h2>
+			<div class="projects-container">
+			  <div class="project-container project-card">
+				<img
+				  src="assets/images/expenseTracker.png"
+				  alt="expense-tracker"
+				  loading="lazy"
+				  class="project-pic"
+				/>
+				<h3 class="project-title">Expense Tracker</h3>
+				<p class="project-details">
+				  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+				  ratione vel inventore labore commodi modi quos culpa aut saepe!
+				  Alias!
+				</p>
+				<a href="#" target="_blank" class="project-link">Check it Out</a>
+			  </div>
+			  <div class="project-container project-card">
+				<img
+				  src="assets/images/netflixClone.png"
+				  alt="netflic-clone"
+				  loading="lazy"
+				  class="project-pic"
+				/>
+				<h3 class="project-title">Netflix Clone</h3>
+				<p class="project-details">
+				  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+				  ratione vel inventore labore commodi modi quos culpa aut saepe!
+				  Alias!
+				</p>
+				<a href="#" target="_blank" class="project-link">Check it Out</a>
+			  </div>
+			  <div class="project-container project-card">
+				<img
+				  src="assets/images/greenyEarth.png"
+				  alt="greeny-earth"
+				  loading="lazy"
+				  class="project-pic"
+				/>
+				<h3 class="project-title">Greeny Earth</h3>
+				<p class="project-details">
+				  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas
+				  ratione vel inventore labore commodi modi quos culpa aut saepe!
+				  Alias!
+				</p>
+				<a href="#" target="_blank" class="project-link">Check it Out</a>
+			  </div>
+			</div>
+			<div><a href="projects.html">More</a></div>
+		  </section>
+	 
+		 <!-- Contact section -->
+		 <section class="contact" id="contact">
+			<h2>Get In Touch With Me</h2>
+			<div class="contact-form-container">
+			  <div class="contact-form">
+				<form action="https://formspree.io/f/xvolwgrd" method="POST">
+				  <div class="form-control">
+					<label for="name">Name</label>
+					<input
+					  type="text"
+					  id="name"
+					  name="sender-name"
+					  placeholder="Enter Your Name"
+					  class="input-field"
+					  required
+					/>
+				  </div>
+				  <div class="form-control">
+					<label for="email">Email</label>
+					<input
+					  type="email"
+					  id="email"
+					  name="sender-email"
+					  placeholder="Enter Your Email"
+					  class="input-field"
+					  required
+					/>
+				  </div>
+				  <div class="form-control">
+					<label for="message">Message</label>
+					<textarea
+					  id="message"
+					  cols="60"
+					  rows="10"
+					  placeholder="Enter Your Message"
+					  name="message"
+					  class="input-field"
+					  required
+					></textarea>
+				  </div>
+				  <input
+					type="submit"
+					value="Submit"
+					id="submit-btn"
+					class="submit-btn"
+				  />
+				</form>
+			  </div>
+			</div>
+		  </section>
+		 <!-- Social accounts - Fixed to the right -->
+	     <div class="socials">
+			<a href="https://www.linkedin.com/in/b-weatherall/" target="_blank"
+			  ><img
+				src="assets/icons/icons8-linkedin-circled.gif"
+				alt="Linkedin"
+				loading="lazy"
+				class="socicon"
+			/></a>
+			<a href="https://github.com/BenWeatherall" target="_blank"
+			  ><img src="assets/icons/icons8-github.gif" alt="Github" class="socicon"
+			/></a>
+			</div>	
 
-</body></html>
+		 <!-- Scroll to top -->
+		 <i class="scroll-up" id="scroll-up"
+		 ><img
+		   src="assets/icons/icons8-upward-arrow.gif"
+		   class="socicon up-arrow"
+		   alt="scroll-up"
+	   /></i>
+		 <!-- Footer section -->
+			<footer>
+				<p class="copy">&copy; Copyright 2021</p>
+				<p class="copy">
+					Built with &#x2661; by
+					<a href="https://twitter.com/koladechris" target="_blank"
+					>Kolade Chris (Ksound)</a
+					>
+				</p>
+			</footer>
+		 <!-- Website scripts -->
+		 <script src="assets/js/app.js"></script>
+	 
+		 <!-- Ion icons scripts -->
+		 <script
+		   type="module"
+		   src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		 ></script>
+		 <script
+		   nomodule
+		   src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		 ></script>
+	   </body>
+	 </html>
