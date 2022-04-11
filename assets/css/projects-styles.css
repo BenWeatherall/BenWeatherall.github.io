@@ -50,6 +50,14 @@
 
   .project-card-left{
     text-align: left;
-    width: 40rem;
+    width: 50rem;
+    max-width: 50rem;
+    padding: 1rem;
+  }
+
+  .project-card-right{
+    text-align: left;
+    width: 70rem;
+    max-width: 70rem;
     padding: 1rem;
   }
