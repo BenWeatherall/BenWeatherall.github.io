@@ -1,5 +1,5 @@
 {
-    "about-brief": "JSON-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus inventore tempore minus nemo, iste ullam illo laboriosam maiores repudiandae quos!",
+    "about-brief": "I am a software developer with a background in 3D graphics, a love of Artificial Intelligence and a focus on solving weird and wonderful problems. I'm platform agnostic; though my skills in Python and C++ are my strongest.",
     "about": "JSON-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendisnesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,autem deleniti cupiditate molestias quis unde quae totam porro dictaiure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus</br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequunturnostrum dolor minus, libero delectus praesentium perferendis</br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,consequuntur labore? Ea totam voluptas amet!",
     "skills-brief": ["C++", "CSharp", "Python", "Git", "Unity", "OpenGL", "Node.js"],
     "skills": ["C", "C++", "C#", "Python", "Javascript", "Git", "Unity", "Graphics", "Analytics", "AI", "LaTex", "AWS"],
