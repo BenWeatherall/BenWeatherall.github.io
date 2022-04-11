@@ -29,10 +29,15 @@
 		   rel="stylesheet"
 		   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 		 />
+
+		 <!-- JQuery CDN -->
+		 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+		 <!-- Content -->
 		 <title>Ben Weatherall | Software Developer - Projects</title>
 	   </head>
 	 
-	   <body>
+	   <body onload="BuildProjects('./assets/json/projects.json')">
 		 <!-- Navbar -->
 		 <nav>
 			<h1>Ben Weatherall</h1>
@@ -50,7 +55,7 @@
 		 <!-- Projects section -->
 		 <section class="all-projects" id="projects">
 			<h2 class="all-projects-title">Major Projects</h2>
-			<div class="all-projects-container">
+			<div class="all-projects-container" id="projects-container">
 
 				<div class="all-project-container project-card">
 					<div class="project-card-left">
@@ -159,6 +164,7 @@
 							<strong>Organisation: </strong>Voxon Photonics</br>
 							<strong>Languages: </strong>Python</br>
 							<strong>Technologies: </strong>AWS EC2</br>
+							<strong>Link: </strong><a href="https://voxon.co/worlds-first-international-holographic-video-call/"></a></br>
 						</p>
 					</div>
 					<div class="project-card-right">
@@ -431,7 +437,7 @@
 			</footer>
 		 <!-- Website scripts -->
 		 <script src="assets/js/app.js"></script>
-	 
+
 		 <!-- Ion icons scripts -->
 		 <script
 		   type="module"

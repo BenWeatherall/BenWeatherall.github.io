@@ -1,0 +1,138 @@
+{
+	"projects": [
+		{ 
+			"start-year": 2021,
+			"on-going": false,
+			"image": "assets/images/DISProcessor.png",
+			"alt-text": "Copyright Voxon Photonics",
+			"organisation": "Voxon Photonics",
+			"languages": ["C++", "Node.js", "Javascript"],
+			"technologies": ["DIS6", "JSON", "Electron"],
+			"links": [{"title": "test", "link": "http://voxon.co8/"}],
+			"title": "Distributed Interactive Simulation (DIS) Processor",
+			"details": "The DIS Processor was a core backend component to a larger project with a defense partner.</br>The goal was to develop a client which could listen to multicast DIS6/7 UPD packets, extract all available metadata, generate an internal representation of all entities and events within the packets and then provide them for internal services, via a shared library, and external services, via a RESTful API.</br>In addition to this core service, the project also covered the development of an Electron GUI that could communicate with the processor via the RESTful API. This program needed the ability to constantly monitor and react to changes in the API data, as well as submit changes to the core data based on user inputs within the GUI."
+		},
+				{
+			"image": "assets/images/DISProcessor.png",
+			"alt-text": "DIS-processor",
+			"start-year": "2021",
+			"on-going": false,
+			"organisation": "Voxon Photonics",
+			"languages": ["C++", "Node.js", "Javascript"],
+			"technologies": ["DIS6 protocol", "JSON", "Electron"],
+			"title": "Distributed Interactive Simulation (DIS) Processor",
+			"details": "The DIS Processor was a core backend component to a larger project with a defense partner.</br>The goal was to develop a client which could listen to multicast DIS6/7 UPD packets, extract all available  metadata, generate an internal representation of all entities and events within the packets and then provide them for internal services, via a shared library, and external services, via a RESTful API.</br> In addition to this core service, the project also covered the development of an Electron GUI that could communicate with the processor via the RESTful API. This program needed the ability to constantly monitor and react to changes in the API data, as well as submit changes to the core data based on user inputs within the GUI.",
+			"brief": "As part of a larger project, I developed a DIS6 processing service that converted DIS packets into a localised C++ library and JSON server which enabled local and distributed visualisation of military encounters."
+		},
+		{
+			"image": "assets/images/BlenderIntegration.png",
+			"alt-text": "Blender-integration",
+			"start-year": "2020",
+			"on-going": false,
+			"organisation": "Voxon Photonics",
+			"languages": ["Python"],
+			"technologies": ["Blender"],
+			"title": "Blender Integration for Voxon Runtime",
+			"details": "With the success of the Unity Addon in easing development for the VX1, it was proposed that integration between the Voxon Runtime and Blender would be a great target to reach. The goal of real time model creation and editing while being able to see it volumetrically in real time was established.</br>As the Blender pipeline allows for direct access to mesh data, this process was possible but required a bridge between python and the Voxon Runtime to work. Thankfully this process ended up being straightforward, with the c_types library allowing direct access to core Voxon functions. At this point I developed a series of example functions demonstrating mesh and indices access, along with the ability to present vertex colour data."
+		},
+		{
+
+			"image": "assets/images/VoxonVertex.png",
+			"alt-text": "Voxon-Vertex",
+			"start-year": "2019",
+			"on-going": true,
+			"organisation": "Voxon Photonics",
+			"languages": ["Node.js", "Javascript"],
+			"technologies": ["NW.js", "Webpack", "MongoDB", "AWS S3"],
+			"collaborators": ["Matthew Veccio (Co-Lead, Hardware Stakeholder, Graphic Design, UX Design)"],
+			"title": "Voxon Vertex",
+			"details": "----, TOPICs: Base GUI, Hardware Interaction, Software Library, Collaboration on UX / Graphic Design, Management of S3 and File contents, Development & Automation of Internal Content Pipeline, Metadata Management and Access via MongoDB, Release Generation"
+		},
+		{
+			"image": "assets/images/demview-server.png",
+			"alt-text": "demview-server",
+			"start-year": "2019",
+			"on-going": false,
+			"organisation": "Voxon Photonics",
+			"languages": ["Python"],
+			"technologies": ["AWS EC2"],
+			"links": [{"link": "https://voxon.co/worlds-first-international-holographic-video-call/", "title": "Annoucement"}],
+			"title": "DemView Listener / Server",
+			"details": "In early 2019, Voxon was invited to present their volumetric technology at the BBC in London. As part of this presentation the team was to make the world's first live volumetric video call via the DemView software developed by Ken Silverman. Unfortunately due to compatibility issues between the BBC's and Flinder's University (where Voxon was working at the time) networking systems, it was not possible to directly connect between the devices.</br> To solve this dilemma, I developed a packet switching program for use on an Amazon EC2 instance. Upon both devices connecting to the servers ports a communications pipeline would be set up to swap messages between each device, making each device a client and server.</br>This solution operated smoothly on the day; providing a lag free experience for the presenters communicating between Australia and England."
+		},
+		{
+			"image": "assets/images/Voxon-dashboard.png",
+			"alt-text": "Voxon-dashboard",
+			"start-year": "2018",
+			"on-going": false,
+			"organisation": "Voxon Photonics",
+			"languages": ["C#"],
+			"title": "Volumetric Dashboard",
+			"details": "As part of a proof of concept to a partnering car manufacturer, our team created a simulated dashboard integration for volumetric displays within a car. The goal of this project was to demonstrate the unique value of volmetric displays within an automotve context. To this end we developed a menu system within Unity that provided demonstrations of a music player, car settings panel (temperature control and seat adjustments), and a navigation system.</br> My role in this project was as Unity lead, developing scripts where required, increasing compatibilty with the underlying Runtime, and providing guidance / education on the use of Unity to the rest of the team."
+		},
+		{
+			"image": "assets/images/SDK-distribution.png",
+			"alt-text": "SDK-distribution",
+			"start-year": "2018",
+			"on-going": true,
+			"organisation": "Voxon Photonics",
+			"languages": ["Python, C#"],
+			"technologies": ["Advanced Software Installer, WiX, Git"],
+			"title": "SDK Distribution",
+			"details": " Prior to 2018, Voxon Photonics primarily distributed their SDK as a zip file containing the latest version of each product within their library. This solution was perfect for a once off installation but caused problems as users were often unaware of updates without checking out website (which often was far behind internal versions), was susceptible to version mismatch between zips, and required users to manually enter path variables.</br> To ease this problem, I developed a base installer for the SDK with Advanced Software Installer that generated the relevant system variables and set up the correct folder structure. Along with this I developed a small updater in C# that tracked updated via a JSON file on the Voxon server.</br> With the creation of Vertex (GUI for the VX1 Hardware), a more robust solution was required. This lead to the use of WiX to develop a split installer that provided Vertex to VX1 hardware, and the SDK to none-VX1 devices. In line with this approach, the updater was integrated into Vertex with the SDK moving to relying upon the github repository for updates."
+		},
+		{
+			"image": "assets/images/bitbucket.png",
+			"alt-text": "bitbucket",
+			"start-year": "2018",
+			"on-going": false,
+			"organisation": "Voxon Photonics",
+			"technologies": ["git"],
+			"title": "Voxon Bitbucket Establishment",
+			"details": " With the growth of the team over 2018, it became apparent that the existing software backup and versioning system was no longer suitable for the future. As the team had been working with Atlassian's Jira for a while at this point, it was decided to migrate the various software projects to Bitbucket. I was tasked with migrating established software to bitbucket, and to educate my fellow software developers on the use of git for collaborative development.</br> As part of the project I migrated over 30 projects to the organisational repository, established an automated system for code bases with unique circumstances, and trained my co-workers on the use of git compatible GUI solutions (SourceTree) and how to handle branching, merging, and established guidelines for commit messaging within the system."
+		},
+		{
+			"image": "assets/images/UnityIntegration.png",
+			"alt-text": "Unity-integration",
+			"start-year": "2017",
+			"on-going": true,
+			"organisation": "Voxon Photonics",
+			"languages": ["C#, C/C++"],
+			"technologies": ["Unity, LeapMotion, SpaceNavigator"],
+			"title": "Unity integration for Voxon Runtime",
+			"details": " This is an ongoing project to maximise integration between the Unity engine (Unity Technologies) and Voxon Photonics hardware runtime.</br> To ensure the longterm viability of this project I needed to develop a consistent and feature complete inteface for external communications with the Voxon Runtime, along with a bridge that implements this interface. To increase ease of communications between the runtime and Unity, I developed these libraries in C#. This solution proved to be mostly successful, with only minor breaks due to new critical features being developed to meet client needs, which then altered the interface. As part of these changes; updates were communicated, generated and released to the community.</br> The Unity integration was done via a mix of direct mesh access from Objects within the scene, processing of this data either via CPU or GPU driven compute shaders, and, where possible, cached for rapid presentation on future frames.</br> Additional features developed as part of this project are; handling of dynamic textures, particle systems, shaders to visualise 2D to Volumetric 3D transformations, a dynamic lighting system, and input managers for LeapMotion, and SpaceNavigator devices."
+		},
+		{
+			"image": "assets/images/data-process.png",
+			"alt-text": "data-process",
+			"start-year": "2018",
+			"on-going": false,
+			"organisation": "University of Adelaide",
+			"languages": ["Python"],
+			"technologies": ["XML, SQL, High Power Computing, SLURM, Distributed Computing"],
+			"title": "Big Data Processing",
+			"details": " Due to an internal process within the University, a complex extraction of publications metadata was required from a Clarivate metadata repository. Having acquired the data in question, a zipped series of XML files greater than 200GB in size, I was tasked with extracting specific fields from the metadata and simplifying the details for internal reporting.</br> As this was a time dependent task, I was provided training and access to the University's HPC system Phoenix. I developed a solution in python that worked iteratively across the files, due to them being too large to cache entirely to memory, splitting chunks to be processed on seperate cores. The processed data was then stored in a collection of csv files, which were subsequently loaded into a SQLite database along with supporting material for reporting on.</br> This solution ended up being timely, provided precisely the information that was required for the process, and ended up being easily repeatable with future loads which lead to the process being run consistently there after."
+		},
+		{
+			"image": "assets/images/wiki-book.png",
+			"alt-text": "wiki-book",
+			"start-year": "2016",
+			"on-going": false,
+			"organisation": "University of Adelaide",
+			"languages": ["Python, PHP, LaTex"],
+			"title": "Wiki to Book (Latex)",
+			"details": " This was an proof of concept project to determine the viability of an inhouse eBook publishing solution that seperated book content from design, allowing Authors to focus on writing books while empowering the publisher to generate systematic forms leading to faster typesetting and even automation of publishing.</br> The system worked as a proof of concept and allowed a series of wiki articles to be automatically combined into chapters within a generated ebook with the press of a button."
+		},
+		{
+			"image": "assets/images/vr-libraries.png",
+			"alt-text": "vr-libraries",
+			"start-year": "2015",
+			"on-going": false,
+			"organisation": "University of Adelaide",
+			"languages": ["C++"],
+			"technologies": ["Unreal, Virtual Reality, 360 Camera, Android"],
+			"title": "VR in Libraries",
+			"details": "Established in collaboration with the University of Adelaide Technology Services department, this project aimed to explore uses for Virtual Reality within university libraries. Due to the resurgence of the technology still being extemely new at the time, and the extreme lack of content, this project explored the difficulties of generating content for the device, examined to document these processes, and where a library might integrate the technology.</br>As part of the study a series of 360 videos were filmed, processed and stitched by the Technology Services team, and then made available via the GearVR headset. Additionally I developed a small VR experience within the Unreal Engine for the GearVR. The project focused on the use of boolean logic to interact with bubbles within the scene.</br>The process of generating these pieces were documented and made available to the university community along with a report reflecting on the project. This project lead to the creation of a Virtual Reality Community of Practice within the University, along with an initiative to ensure a group of library staff were trained in the technology, who there after provided VR support services to groups within the University."
+		}		
+	]
+}
