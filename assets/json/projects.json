@@ -15,6 +15,7 @@
 		},
 		{
 			"highlight": true,
+			"section-title": "blender-processor",
 			"image": "assets/images/BlenderIntegration.png",
 			"alt-text": "Blender-integration",
 			"start-year": "2020",
@@ -22,12 +23,14 @@
 			"organisation": "Voxon Photonics",
 			"languages": ["Python", "C"],
 			"technologies": ["Blender"],
+			"links": [{"title": "Demonstration (Youtube)", "link": "https://www.youtube.com/watch?v=LYQdGT6uZaw"}],
 			"title": "Blender Integration for Voxon Runtime",
 			"details": "With the success of the Unity Addon in easing development for the VX1, it was proposed that integration between the Voxon Runtime and Blender would be a great target to reach. The goal of real time model creation and editing while being able to see it volumetrically in real time was established.</br>As the Blender pipeline allows for direct access to mesh data, this process was possible but required a bridge between python and the Voxon Runtime to work. Thankfully this process ended up being straightforward, with the c_types library allowing direct access to core Voxon functions. At this point I developed a series of example functions demonstrating mesh and indices access, along with the ability to present vertex colour data.",
 			"brief": "To increase the ease of creating content for the Voxon Volumetric display I developed a bridge for the voxon dll to python, and a plugin for Blender which was able to send mesh data to the display in real time."
 		},
 		{
 			"highlight": true,
+			"section-title": "voxon-vertex",
 			"image": "assets/images/VoxonVertex.png",
 			"alt-text": "Voxon-Vertex",
 			"start-year": "2019",
@@ -38,9 +41,10 @@
 			"collaborators": ["Matthew Veccio (Co-Lead, Hardware Stakeholder, Graphic Design, UX Design)"],
 			"title": "Voxon Vertex",
 			"details": "----, TOPICs: Base GUI, Hardware Interaction, Software Library, Collaboration on UX / Graphic Design, Management of S3 and File contents, Development & Automation of Internal Content Pipeline, Metadata Management and Access via MongoDB, Release Generation",
-			"brief": "TBA"
+			"brief": "To improve user experience, Matthew Veccio and I developed a GUI for the VX1 hardware that simplified running software, gave access to our internal catalogue of software / media, and automated the updating process."
 		},
 		{
+			"section-title": "demview-server",
 			"image": "assets/images/demview-server.png",
 			"alt-text": "demview-server",
 			"start-year": "2019",
@@ -56,6 +60,7 @@
 			"details": "In early 2019, Voxon was invited to present their volumetric technology at the BBC in London. As part of this presentation the team was to make the world's first live volumetric video call via the DemView software developed by Ken Silverman. Unfortunately due to compatibility issues between the BBC's and Flinder's University (where Voxon was working at the time) networking systems, it was not possible to directly connect between the devices.</br> To solve this dilemma, I developed a packet switching program for use on an Amazon EC2 instance. Upon both devices connecting to the servers ports a communications pipeline would be set up to swap messages between each device, making each device a client and server.</br>This solution operated smoothly on the day; providing a lag free experience for the presenters communicating between Australia and England."
 		},
 		{
+			"section-title": "voxon-dashboard",
 			"image": "assets/images/Voxon-dashboard.png",
 			"alt-text": "Voxon-dashboard",
 			"start-year": "2018",
@@ -66,6 +71,7 @@
 			"details": "As part of a proof of concept to a partnering car manufacturer, our team created a simulated dashboard integration for volumetric displays within a car. The goal of this project was to demonstrate the unique value of volmetric displays within an automotve context. To this end we developed a menu system within Unity that provided demonstrations of a music player, car settings panel (temperature control and seat adjustments), and a navigation system.</br> My role in this project was as Unity lead, developing scripts where required, increasing compatibilty with the underlying Runtime, and providing guidance / education on the use of Unity to the rest of the team."
 		},
 		{
+			"section-title": "sdk-distribution",
 			"image": "assets/images/SDK-distribution.png",
 			"alt-text": "SDK-distribution",
 			"start-year": "2018",
@@ -77,6 +83,7 @@
 			"details": " Prior to 2018, Voxon Photonics primarily distributed their SDK as a zip file containing the latest version of each product within their library. This solution was perfect for a once off installation but caused problems as users were often unaware of updates without checking out website (which often was far behind internal versions), was susceptible to version mismatch between zips, and required users to manually enter path variables.</br> To ease this problem, I developed a base installer for the SDK with Advanced Software Installer that generated the relevant system variables and set up the correct folder structure. Along with this I developed a small updater in C# that tracked updated via a JSON file on the Voxon server.</br> With the creation of Vertex (GUI for the VX1 Hardware), a more robust solution was required. This lead to the use of WiX to develop a split installer that provided Vertex to VX1 hardware, and the SDK to none-VX1 devices. In line with this approach, the updater was integrated into Vertex with the SDK moving to relying upon the github repository for updates."
 		},
 		{
+			"section-title": "bitbucket",
 			"image": "assets/images/bitbucket.png",
 			"alt-text": "bitbucket",
 			"start-year": "2018",
@@ -84,10 +91,11 @@
 			"organisation": "Voxon Photonics",
 			"technologies": ["git"],
 			"title": "Voxon Bitbucket Establishment",
-			"details": " With the growth of the team over 2018, it became apparent that the existing software backup and versioning system was no longer suitable for the future. As the team had been working with Atlassian's Jira for a while at this point, it was decided to migrate the various software projects to Bitbucket. I was tasked with migrating established software to bitbucket, and to educate my fellow software developers on the use of git for collaborative development.</br> As part of the project I migrated over 30 projects to the organisational repository, established an automated system for code bases with unique circumstances, and trained my co-workers on the use of git compatible GUI solutions (SourceTree) and how to handle branching, merging, and established guidelines for commit messaging within the system."
+			"details": "With the growth of the team over 2018, it became apparent that the existing software backup and versioning system was no longer suitable for the future. As the team had been working with Atlassian's Jira for a while at this point, it was decided to migrate the various software projects to Bitbucket. I was tasked with migrating established software to bitbucket, and to educate my fellow software developers on the use of git for collaborative development.</br> As part of the project I migrated over 30 projects to the organisational repository, established an automated system for code bases with unique circumstances, and trained my co-workers on the use of git compatible GUI solutions (SourceTree) and how to handle branching, merging, and established guidelines for commit messaging within the system."
 		},
 		{
 			"highlight": true,
+			"section-title": "unity-integration",
 			"image": "assets/images/UnityIntegration.png",
 			"alt-text": "Unity-integration",
 			"start-year": "2017",
@@ -96,10 +104,11 @@
 			"languages": ["C#, C/C++"],
 			"technologies": ["Unity, LeapMotion, SpaceNavigator"],
 			"title": "Unity integration for Voxon Runtime",
-			"details": " This is an ongoing project to maximise integration between the Unity engine (Unity Technologies) and Voxon Photonics hardware runtime.</br> To ensure the longterm viability of this project I needed to develop a consistent and feature complete inteface for external communications with the Voxon Runtime, along with a bridge that implements this interface. To increase ease of communications between the runtime and Unity, I developed these libraries in C#. This solution proved to be mostly successful, with only minor breaks due to new critical features being developed to meet client needs, which then altered the interface. As part of these changes; updates were communicated, generated and released to the community.</br> The Unity integration was done via a mix of direct mesh access from Objects within the scene, processing of this data either via CPU or GPU driven compute shaders, and, where possible, cached for rapid presentation on future frames.</br> Additional features developed as part of this project are; handling of dynamic textures, particle systems, shaders to visualise 2D to Volumetric 3D transformations, a dynamic lighting system, and input managers for LeapMotion, and SpaceNavigator devices.",
-			"brief": "TBA"
+			"details": "This is an ongoing project to maximise integration between the Unity engine (Unity Technologies) and Voxon Photonics hardware runtime.</br> To ensure the longterm viability of this project I needed to develop a consistent and feature complete inteface for external communications with the Voxon Runtime, along with a bridge that implements this interface. To increase ease of communications between the runtime and Unity, I developed these libraries in C#. This solution proved to be mostly successful, with only minor breaks due to new critical features being developed to meet client needs, which then altered the interface. As part of these changes; updates were communicated, generated and released to the community.</br> The Unity integration was done via a mix of direct mesh access from Objects within the scene, processing of this data either via CPU or GPU driven compute shaders, and, where possible, cached for rapid presentation on future frames.</br> Additional features developed as part of this project are; handling of dynamic textures, particle systems, shaders to visualise 2D to Volumetric 3D transformations, a dynamic lighting system, and input managers for LeapMotion, and SpaceNavigator devices.",
+			"brief": "I was tasked with integrating Voxon's Volumetric runtime with Unity to allow for the quick generation of interactive volumetric experiences. This project required the development of a fast, low latency bridge that could perform vector transformations on Unity mesh data without impacting the performance of the VX1 hardware."
 		},
 		{
+			"section-title": "data-processing",
 			"image": "assets/images/data-process.png",
 			"alt-text": "data-process",
 			"start-year": "2018",
@@ -111,6 +120,7 @@
 			"details": " Due to an internal process within the University, a complex extraction of publications metadata was required from a Clarivate metadata repository. Having acquired the data in question, a zipped series of XML files greater than 200GB in size, I was tasked with extracting specific fields from the metadata and simplifying the details for internal reporting.</br> As this was a time dependent task, I was provided training and access to the University's HPC system Phoenix. I developed a solution in python that worked iteratively across the files, due to them being too large to cache entirely to memory, splitting chunks to be processed on seperate cores. The processed data was then stored in a collection of csv files, which were subsequently loaded into a SQLite database along with supporting material for reporting on.</br> This solution ended up being timely, provided precisely the information that was required for the process, and ended up being easily repeatable with future loads which lead to the process being run consistently there after."
 		},
 		{
+			"section-title": "wiki-book",
 			"image": "assets/images/wiki-book.png",
 			"alt-text": "wiki-book",
 			"start-year": "2016",
@@ -121,6 +131,7 @@
 			"details": " This was an proof of concept project to determine the viability of an inhouse eBook publishing solution that seperated book content from design, allowing Authors to focus on writing books while empowering the publisher to generate systematic forms leading to faster typesetting and even automation of publishing.</br> The system worked as a proof of concept and allowed a series of wiki articles to be automatically combined into chapters within a generated ebook with the press of a button."
 		},
 		{
+			"section-title": "vr-libraries",
 			"image": "assets/images/vr-libraries.png",
 			"alt-text": "vr-libraries",
 			"start-year": "2015",

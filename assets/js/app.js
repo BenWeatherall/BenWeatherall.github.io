@@ -55,11 +55,26 @@ function BuildProjectHighlights(path){
           <p class="project-details">
           ${project['brief']}
           </p>
-          <a href="projects.html#${project['section-title']}" target="_blank" class="project-link">Check it Out</a>
+          <a href="projects.html#${project['section-title']}" target="_self" class="project-link">Check it Out</a>
           </div>`
         );  
       }
     });
+      $('#project-highlights').append(
+        `<div class="project-container project-card">
+        <img
+          src="./assets/images/projects.png"
+          alt="projects"
+          loading="lazy"
+          class="project-pic"
+        />
+        <h3 class="project-title">All Projects</h3>
+        <p class="project-details">
+        Listing of all my major profession projects. Please see my github for personal projects.
+        </p>
+        <a href="projects.html" target="_self" class="project-link">Check them out</a>
+        </div>`
+      );  
   });
 }
 
@@ -68,7 +83,7 @@ function BuildProjects(path){
   $.getJSON(path, function(json) {
     json['projects'].forEach((project) => {
       $('#projects-container').append(
-      `<div class="all-project-container project-card">
+      `<div class="all-project-container project-card" id=${project['section-title']}>
       <div class="project-card-left">
       ${'image' in project ? `
         <img
@@ -97,8 +112,13 @@ function BuildProjects(path){
         ${project['details']} 
         </p>
       </div>
-      </div>`);  
-    })
+      </div>`);
+      
+      if(('#'+project['section-title']) == window.location.hash){
+        ScrollToID(project['section-title']);
+      }
+    });
+    
   });
 }
 
@@ -164,8 +184,20 @@ function BuildSkillsBrief(path){
   });
 }
 
+function ScrollToID(IDStr){
+  el = document.getElementById(IDStr);
+  if('scrollIntoView' in el){
+    el.scrollIntoView(true);
+  }
+  
+}
+
 function BuildMainPage(){
   BuildProjectHighlights('./assets/json/projects.json');
   BuildAboutMe('./assets/json/me.json');
   BuildSkillsBrief('./assets/json/me.json');
+}
+
+function BuildProjectsPage(){
+  BuildProjects('./assets/json/projects.json');
 }
