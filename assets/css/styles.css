@@ -99,8 +99,7 @@ nav {
     margin: auto;
   }
 
-  .hero img {
-    height: 37.5rem;
+   {
     width: 37.5rem;
   }
   
@@ -347,7 +346,6 @@ nav {
       }
     
       .hero img {
-        height: 37.5rem;
         width: 30rem;
       }
     
@@ -389,7 +387,6 @@ nav {
 
   @media screen and (max-width: 420px) {
     .hero img {
-      height: 37.5rem;
       width: 23rem;
     }
   
