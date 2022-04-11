@@ -1,0 +1,59 @@
+{
+    "about-brief": "JSON-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia sed dolorem fugit sapiente porro veniam pariatur dolore nostrum delectus inventore tempore minus nemo, iste ullam illo laboriosam maiores repudiandae quos!",
+    "about": "JSON-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendisnesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,autem deleniti cupiditate molestias quis unde quae totam porro dictaiure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus</br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequunturnostrum dolor minus, libero delectus praesentium perferendis</br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,consequuntur labore? Ea totam voluptas amet!",
+    "skills-brief": ["C++", "CSharp", "Python", "Git", "Unity", "OpenGL", "Node.js"],
+    "skills": ["C", "C++", "C#", "Python", "Javascript", "Git", "Unity", "Graphics", "Analytics", "AI", "LaTex", "AWS"],
+    "education:": [
+        {
+            "study-name": "Masters of Business Analystics",
+            "start-year": 2021,
+            "on-going": true,
+            "provider": "Deakin University",
+            "description": "Studying with a focus on Machine Learning to enhance business outcomes."
+        },
+        {
+            "study-name": "NVIDIA GPU Technology Workshop",
+            "start-year": 2018,
+            "end-year": 2018,
+            "provider": "NVIDIA Deep Learning Institute",
+            "description": "A hands-on introduction to using NVIDIA GPUs for machine learning processes."
+        },
+        {
+            "study-name": "Introduction to Phoenix workshops",
+            "start-year": 2018,
+            "end-year": 2018,
+            "provider": "University of Adelaide",
+            "description": "A introduction and QA session on the use of the Phoenix HPC array at the Univeristy of Adelaide."
+        },
+        {
+            "study-name": "Bachelor of Computer Science",
+            "start-year": 2015,
+            "end-year": 2018,
+            "provider": "University of Adelaide",
+            "description": "Studied with a focus on Computer Graphics and Artificial Intelligence."
+        }
+    ],
+    "presentations": [
+        {
+            "event": "Siggraph Asia",
+            "year": 2019,
+            "location": "Brisbane",
+            "topic": "Beyond the screen - Volumetric Displays from Voxon Photonics",
+            "abstract": "Voxon is currently the world leader in volumetric display technology and is continuing to push the boundaries and potential of where volumetric display technology can go and how it can be applied. Volumetric 3D data is fast becoming the gold standard in 3D interactive entertainment. Advances in Volumetric capture technology have enabled entirely new digital experiences that include Sport Replay, Music Videos, Gaming and Advertising. Yet despite the technological advances in 3D content creation, the most common way to view 3D is still on a 2D screen. VR and AR has partially addressed this shortcoming, but the need to wear goggles or headgear creates a barrier between the user and the 3D experience. Voxon is seeking to remove that barrier, and in doing so is enabling human-centric 3D digital experiences that can be viewed from any direction with the naked eye. Powered by the Voxon Core Engine, our unique volumetric rendering technology can project detailed and interactive Holographic images that until now have only existed in science fiction movies. In a world where 2D screens provide limited perspective, we are bringing digital assets into the physical world, and in doing so, are enabling a new type of shared visual experience. To make this display technology a reality Voxon had to develop the world's fastest real-time light engine, which is capable of rendering over 3 Billion points of light per second. Ben Weatherall, Voxon's Unity Lead Programmer will talk about Voxon's core technology, how to create content, and some of the unique aspects of volumetric imagery that set it apart from other types of media. With ten years' experience in developing volumetric hardware and software, Voxon is currently looking to engage with industry leaders to evaluate the use of its true 3D glasses-free display technology across a range of industries and use cases."
+        },
+        {
+            "event": "ALIA National Conference",
+            "year": 2016,
+            "location": "Adelaide",
+            "topic": "Experimenting with Virtual Reality in a University Library",
+            "abstract": "Virtual Reality (VR) has become increasingly relevant to academic environments thanks to the arrival of consumer grade and priced VR equipment. In 2015 the University of Adelaide Libraries were challenged to demonstrate innovative and relevant uses of this technology in a way which supported the University's mission while also demonstrating opportunities for the Library. This pilot project existed as part of a greater movement driven by the University's Technology Services division, and allowed an examination of how established groups could best exploit a technology on the very forefront of change.To meet this goal a two phased project was proposed focusing on the rapid acquisition of VR production skills and the creation of a body of resources which could assist staff and students in the creation of content for this new media format.  Using the freely available Unreal Engine (UE4) an experience was created which allowed users to view a fictional world which rendered the effects of Boolean searching on a range of objects.Communications with academics, students and library staff throughout the project indicated that the University's community is excited about VR but has a low awareness of how to apply VR to the academic environment. This project exists within, and due to, the current upheaval within the library industry. The direction of the project and the decision to produce documentation supporting an unreleased product came from the idea of the academic library as a place that creates opportunities for self-directed clients, easing the process of learning and research.  The process highlighted the value of documentation designed to lower the initial barrier to entry for this rising technology. Following this pilot project the University Libraries will consider VR as a component of the 'Library of the Future' and determine how best it may be utilized to meet our client needs."
+        },
+        {
+            "event": "ALIA SA Symposium",
+            "year": 2015,
+            "location": "Adelaide",
+            "topic": "Virtual Reality experimentation within an Academic library",
+            "abstract": "While Virtual Reality (VR) has been utilized in research for decades the impending arrival of consumer grade, and priced, virtual reality equipment has seen VR become increasingly relevant to the education and research environments. In 2015 the University of Adelaide began applying VR to promotion of the University through development of campus experiences; such as 360-degree video that places the user inside Bonython Hall. As a part of this effort three departments, the University Libraries, Marketing & Communications and Learning & Teaching, were provided with VR equipment by Technology Services to pilot VR projects or services dedicated to their areas of expertise. The challenge for the University Libraries was to demonstrate innovative and relevant uses of this technology in a way that supported the University's mission and also demonstrated opportunities for the University Libraries. The answer to this challenge came in the form of a small three person team; the e-research librarian, the library systems manager and a VR enthusiast from the library's Digital Services department.Instead of focusing on simply offering the equipment to library clients, it was decided to introduce not just the equipment, but the low barrier of entry in the creation of content for the technology. Focusing on the creation of the two major content types of Virtual Reality experiences; 360-video and Virtual environments,  the group experimented with different recording techniques, the application of multimedia and videogame creation tools, all to generate some simple content to show users the low barrier to entry.  The project has led to increased interactions with other departments and has reinforced the invaluable nature of interdepartmental cooperation and the ties the library space can make by reaching out to peers. The lessons learnt have been recorded and shared with the University, pathing the way for future work in VR."
+        }
+    ]
+}
