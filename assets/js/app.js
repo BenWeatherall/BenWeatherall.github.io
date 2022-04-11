@@ -124,15 +124,41 @@ function BuildProjects(path){
 
 function BuildAboutMe(path){
   $('#about-me-brief').empty();
-  $('#about-me').empty();
   
   $.getJSON(path, function(json) {
     $('#about-me-brief').append(`
     <p>${json['about-brief']}</p>`);
+  });
+}
 
-    $('#about-me').append(`
-    <h2>More About Me</h2>
-    <p>${json['about']}</p>`);
+function BuildExtendedAbouMe(path){
+  $('#about-me-personality').empty();
+  $('#about-me-career').empty();
+
+  $('#skills-languages').empty();
+  $('#skills-technologies').empty();
+  $.getJSON(path, function(json) {
+    $('#about-me-personality').append(`${json['about']['personality']}`);
+
+    json['about']['career'].forEach((paragraph) => {
+      $('#about-me-career').append(paragraph);
+    })
+
+    let languages = `<ul>`;
+    json['skills']['languages'].forEach((language) => {
+      languages += `<li>${language}</li>`;
+    })
+    languages += `</ul>`;
+    $('#skills-languages').append(languages);
+
+    let technologies = `<ul>`;
+    json['skills']['technologies'].forEach((technology) => {
+      technologies += `<li>${technology}</li>`;
+    })
+    technologies += `</ul>`;
+    $('#skills-technologies').append(technologies);
+
+
   });
 }
 
@@ -200,4 +226,8 @@ function BuildMainPage(){
 
 function BuildProjectsPage(){
   BuildProjects('./assets/json/projects.json');
+}
+
+function BuildBioPage(){
+  BuildExtendedAbouMe('./assets/json/me.json');
 }

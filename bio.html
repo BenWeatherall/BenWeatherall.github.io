@@ -35,15 +35,15 @@ by Kolade Chris (https://github.com/Ksound22/developer-portfolio/) -->
 	<title>Ben Weatherall | Software Developer</title>
 </head>
 
-<body onload="BuildMainPage()">
+<body onload="BuildBioPage()">
 	<!-- Navbar -->
 	<nav>
 		<h1>Ben Weatherall</h1>
 		<ul class="navigation">
-			<li><a href="#about" class="nav-link">About</a></li>
-			<li><a href="#skills" class="nav-link">Skills</a></li>
-			<li><a href="#projects" class="nav-link">Projects</a></li>
-			<li><a href="#contact" class="nav-link">Contact</a></li>
+			<li><a href="/#about" class="nav-link">About</a></li>
+			<li><a href="/#skills" class="nav-link">Skills</a></li>
+			<li><a href="/#projects" class="nav-link">Projects</a></li>
+			<li><a href="/#contact" class="nav-link">Contact</a></li>
 		</ul>
 		<button class="burger-menu" id="burger-menu">
 			<ion-icon class="bars" name="menu-outline"></ion-icon>
@@ -59,24 +59,37 @@ by Kolade Chris (https://github.com/Ksound22/developer-portfolio/) -->
 			class="hero-img"
 		/>
 		<div class="bio animate__animated animate__shakeX">
-			<h2 class="bio-title">About Me</h2>
-			<p class="bio-text" id="about-me-brief"></p>
-			<a href="bio.html">Learn More</a>
+			<h2 class="bio-title">Personality</h2>
+			<div class="bio-text" id="about-me-personality"></div>
 		</div>
 	</section>
 
-	<!-- Projects section -->
-	<section class="projects" id="projects">
-		<h2 class="projects-title">Project Highlights</h2>
-		<div class="projects-container" id="project-highlights">
-		</div>
+	<!-- More about -->
+	<section class="more-about">
+		<h2 class="bio-title">Career</h2>
+		<p class="bio-text" id="about-me-career"></p>
 	</section>
-	
+
+	<!-- Education section -->
+	<section class="education" id="education">
+	</section>
+
 	<!-- Skills section -->
-	<section class="skills" id="skills">
-		<h2 class="skill-header">My Top Skills</h2>
-		<div class="skills-wrapper" id="skills-brief">
+	<section class="projects" id="skills">
+		<h2 class="projects-title">Proficiencies</h2>
+		<div class="projects-container">
+			<div class="project-container project-card">
+				<h3 class="project-title">Languages</h3>
+				<div id="skills-languages"></div>
+			</div>
+
+			<div class="project-container project-card">
+				<h3 class="project-title">Technologies</h3>
+				<div id="skills-technologies"></div>
+			</div>
 		</div>
+		<!--<div class="projects-container" id="skills-languages"></div>-->
+		<!--<div class="projects-container" id="skills-technologies"></div>-->
 	</section>
 
 	<!-- Contact section -->
