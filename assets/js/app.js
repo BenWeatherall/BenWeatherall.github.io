@@ -60,21 +60,22 @@ function BuildProjectHighlights(path){
         );  
       }
     });
-      $('#project-highlights').append(
-        `<div class="project-container project-card">
-        <img
-          src="./assets/images/projects.png"
-          alt="projects"
-          loading="lazy"
-          class="project-pic"
-        />
-        <h3 class="project-title">All Projects</h3>
-        <p class="project-details">
-        Listing of all my major profession projects. Please see my github for personal projects.
-        </p>
-        <a href="projects.html" target="_self" class="project-link">Check them out</a>
-        </div>`
-      );  
+
+    $('#project-highlights').append(
+      `<div class="project-container project-card">
+      <img
+        src="./assets/images/projects.png"
+        alt="projects"
+        loading="lazy"
+        class="project-pic"
+      />
+      <h3 class="project-title">All Projects</h3>
+      <p class="project-details">
+      Listing of all my major profession projects. Please see my github for personal projects.
+      </p>
+      <a href="projects.html" target="_self" class="project-link">Check them out</a>
+      </div>`
+    );  
   });
 }
 
@@ -137,6 +138,9 @@ function BuildExtendedAbouMe(path){
 
   $('#skills-languages').empty();
   $('#skills-technologies').empty();
+
+  $('#education').empty();
+
   $.getJSON(path, function(json) {
     $('#about-me-personality').append(`${json['about']['personality']}`);
 
@@ -158,7 +162,18 @@ function BuildExtendedAbouMe(path){
     technologies += `</ul>`;
     $('#skills-technologies').append(technologies);
 
-
+    json['education'].forEach((education) => {
+      $('#education').append(`
+      <div class="all-project-container project-card">
+        <p>
+          <strong>Year: </strong>${education['start-year']}${education['on-going']? ' - ' : ''}${education['end-year'] && education['end-year'] != education['start-year']? `-${education['end-year']}` : ''}</br>
+          <strong>Program: </strong>${education['study-name']}</br>
+          <strong>Provider: </strong>${education['provider']}</br>
+          <strong>Objective: </strong>${education['description']}</br>          
+        </p>
+      </div>
+      `);
+    });
   });
 }
 

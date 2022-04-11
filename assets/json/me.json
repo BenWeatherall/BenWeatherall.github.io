@@ -15,7 +15,7 @@
         "languages": ["C", "C++", "C#", "Python", "Javascript", "GLSL/HLSL"], 
         "technologies": ["Git", "Unity", "Unreal", "Graphic & Compute shaders", "HPC", "Data Analytics", "Artificial Intelligence", "Machine Learning", "LaTex", "Node.js", "AWS Services", "Virtual Reality"]
     },
-    "education:": [
+    "education": [
         {
             "study-name": "Masters of Business Analystics",
             "start-year": 2021,

@@ -44,6 +44,17 @@
 			"brief": "To improve user experience, Matthew Veccio and I developed a GUI for the VX1 hardware that simplified running software, gave access to our internal catalogue of software / media, and automated the updating process."
 		},
 		{
+			"section-title": "microsoft-svf",
+			"image": "assets/images/Microsoft-SVF.png",
+			"alt-text": "Microsoft SVF",
+			"start-year": "2018",
+			"on-going": false,
+			"organisation": "Voxon Photonics",
+			"languages": ["C", "C++"],
+			"title": "Microsoft SVF Demo",
+			"details": "As part of a collaboration with Microsoft, we were given early access to the Microsoft SVF SDK and had the opportunity to develop a viewer for the format. During this process I was lucky enough to liase with the team on how best to access the underlying mesh data, and was able to successfully build a player for the format."
+		},
+		{
 			"section-title": "demview-server",
 			"image": "assets/images/demview-server.png",
 			"alt-text": "demview-server",
