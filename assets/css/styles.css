@@ -99,7 +99,8 @@ nav {
     margin: auto;
   }
 
-   {
+  .hero img
+  {
     width: 37.5rem;
   }
   
@@ -305,6 +306,18 @@ nav {
   }
   
   .up-arrow {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .go-back {
+    position: fixed;
+    left: 0.5%;
+    top: 10%;
+    cursor: pointer;
+  }
+
+  .back-arrow {
     width: 3rem;
     height: 3rem;
   }

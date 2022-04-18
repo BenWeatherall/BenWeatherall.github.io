@@ -9,6 +9,12 @@ scrollUp.addEventListener("click", () => {
   });
 });
 
+// scroll to top functionality
+const goBack = document.querySelector("#go-back");
+
+goBack?.addEventListener("click", () => {
+  history.back();
+});
 
 // Nav hamburgerburger selections
 const burger = document.querySelector("#burger-menu");
