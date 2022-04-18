@@ -137,8 +137,7 @@ function BuildAboutMe(path){
   $('#about-me-brief').empty();
   
   $.getJSON(path, function(json) {
-    $('#about-me-brief').append(`
-    <p>${json['about-brief']}</p>`);
+    $('#about-me-brief').append(`<p>${json['about-brief']}</p>`);
   });
 }
 
@@ -152,7 +151,7 @@ function BuildExtendedAbouMe(path){
   $('#education').empty();
 
   $.getJSON(path, function(json) {
-    $('#about-me-personality').append(`${json['about']['personality']}`);
+    $('#about-me-personality').append(`<p>${json['about']['personality']}</p>`);
 
     json['about']['career'].forEach((paragraph) => {
       $('#about-me-career').append(paragraph);
@@ -174,7 +173,7 @@ function BuildExtendedAbouMe(path){
 
     json['education'].forEach((education) => {
       $('#education').append(`
-      <div class="all-project-container project-card">
+      <div class="all-project-container education-card">
         <p>
           <strong>Year: </strong>${education['start-year']}${education['on-going']? ' - ' : ''}${education['end-year'] && education['end-year'] != education['start-year']? `-${education['end-year']}` : ''}</br>
           <strong>Program: </strong>${education['study-name']}</br>

@@ -313,7 +313,6 @@ nav {
   .go-back {
     position: fixed;
     left: 0.5%;
-    top: 10%;
     cursor: pointer;
   }
 

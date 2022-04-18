@@ -12,8 +12,8 @@
     },
     "skills-brief": ["C++", "CSharp", "Python", "Git", "Unity", "OpenGL", "Node.js"],
     "skills": {
-        "languages": ["C", "C++", "C#", "Python", "Javascript", "GLSL/HLSL"], 
-        "technologies": ["Git", "Unity", "Unreal", "Graphic & Compute shaders", "HPC", "Data Analytics", "Artificial Intelligence", "Machine Learning", "LaTex", "Node.js", "AWS Services", "Virtual Reality"]
+        "languages": ["C", "C++", "C#", "Python", "Javascript", "GLSL/HLSL", "HTML"], 
+        "technologies": ["Git", "Unity", "Unreal", "Graphic & Compute shaders", "HPC", "Data Analytics", "Artificial Intelligence", "Machine Learning", "LaTeX", "Node.js", "AWS Services", "Virtual Reality"]
     },
     "education": [
         {
