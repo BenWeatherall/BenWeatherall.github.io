@@ -94,7 +94,7 @@ function BuildProjects(path){
           class="all-project-pic"
         />` : ``}
         ${'video' in project ? `
-        <video autoplay loop poster="${project['video']['poster']}" style="max-width: 90%; height: auto;">
+        <video autoplay loop style="max-width: 90%; height: auto;">
           <source src="${project['video']['video']}" type="video/mp4">
         </video>` : ``}
         <p>
