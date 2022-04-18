@@ -92,7 +92,11 @@ function BuildProjects(path){
           alt=${project['alt-text']}
           loading="lazy"
           class="all-project-pic"
-        />` : ``}  
+        />` : ``}
+        ${'video' in project ? `
+        <video preload="auto" autoplay="autoplay" loop="loop" poster="${project['video']['poster']}" style="max-width: 90%; height: auto;">
+          <source src="${project['video']['video']}" type="video/mp4">
+        </video>` : ``}
         <p>
           <strong>Year: </strong>${project['start-year']}${project['on-going']? '-' : ''}</br>
           <strong>Organisation: </strong>${project['organisation']}</br>

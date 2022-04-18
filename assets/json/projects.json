@@ -45,8 +45,8 @@
 		},
 		{
 			"section-title": "microsoft-svf",
-			"image": "assets/images/Microsoft-SVF.png",
-			"alt-text": "Microsoft SVF",
+			"video": {"video": "https://i.imgur.com/CdLdD9P.gifv", "poster": "https://i.imgur.com/CdLdD9Pb.jpg"},
+			"alt-text": "MicrosoftSVF",
 			"start-year": "2018",
 			"on-going": false,
 			"organisation": "Voxon Photonics",
@@ -56,7 +56,7 @@
 		},
 		{
 			"section-title": "demview-server",
-			"image": "assets/images/demview-server.png",
+			"image": "assets/images/demviewserver.jpg",
 			"alt-text": "demview-server",
 			"start-year": "2019",
 			"on-going": false,
@@ -89,7 +89,7 @@
 			"on-going": true,
 			"organisation": "Voxon Photonics",
 			"languages": ["Python", "C#"],
-			"technologies": ["Advanced Software Installer", "WiX", "Git"],
+			"technologies": ["Advanced Software Installer", "WiX Toolset", "Git"],
 			"title": "SDK Distribution",
 			"details": " Prior to 2018, Voxon Photonics primarily distributed their SDK as a zip file containing the latest version of each product within their library. This solution was perfect for a once off installation but caused problems as users were often unaware of updates without checking out website (which often was far behind internal versions), was susceptible to version mismatch between zips, and required users to manually enter path variables.</br> To ease this problem, I developed a base installer for the SDK with Advanced Software Installer that generated the relevant system variables and set up the correct folder structure. Along with this I developed a small updater in C# that tracked updated via a JSON file on the Voxon server.</br> With the creation of Vertex (GUI for the VX1 Hardware), a more robust solution was required. This lead to the use of WiX to develop a split installer that provided Vertex to VX1 hardware, and the SDK to none-VX1 devices. In line with this approach, the updater was integrated into Vertex with the SDK moving to relying upon the github repository for updates."
 		},
@@ -124,7 +124,6 @@
 		},
 		{
 			"section-title": "data-processing",
-			"image": "assets/images/data-process.png",
 			"alt-text": "data-process",
 			"start-year": "2018",
 			"on-going": false,
@@ -155,6 +154,7 @@
 			"languages": ["C++"],
 			"technologies": ["Unreal", "Virtual Reality", "360 Camera", "Android"],
 			"title": "VR in Libraries",
+			"links": [{"title": "ALIA presentation", "link": "https://read.alia.org.au/experimenting-virtual-reality-university-library-0"}],
 			"details": "Established in collaboration with the University of Adelaide Technology Services department, this project aimed to explore uses for Virtual Reality within university libraries. Due to the resurgence of the technology still being extemely new at the time, and the extreme lack of content, this project explored the difficulties of generating content for the device, examined to document these processes, and where a library might integrate the technology.</br>As part of the study a series of 360 videos were filmed, processed and stitched by the Technology Services team, and then made available via the GearVR headset. Additionally I developed a small VR experience within the Unreal Engine for the GearVR. The project focused on the use of boolean logic to interact with bubbles within the scene.</br>The process of generating these pieces were documented and made available to the university community along with a report reflecting on the project. This project lead to the creation of a Virtual Reality Community of Practice within the University, along with an initiative to ensure a group of library staff were trained in the technology, who there after provided VR support services to groups within the University."
 		}		
 	]
