@@ -41,10 +41,11 @@ by Kolade Chris (https://github.com/Ksound22/developer-portfolio/) -->
 	<nav>
 		<h1>Ben Weatherall</h1>
 		<ul class="navigation">
-			<li><a href="/#about" class="nav-link">About</a></li>
-			<li><a href="/#skills" class="nav-link">Skills</a></li>
-			<li><a href="/#projects" class="nav-link">Projects</a></li>
-			<li><a href="/#contact" class="nav-link">Contact</a></li>
+			<li><a href="/" class="nav-link">Home</a></li>
+			<li><a href="#personality" class="nav-link">Personality</a></li>
+			<li><a href="#career" class="nav-link">Career</a></li>
+			<li><a href="#education" class="nav-link">Education</a></li>
+			<li><a href="#skills" class="nav-link">Proficiencies</a></li>
 		</ul>
 		<button class="burger-menu" id="burger-menu">
 			<ion-icon class="bars" name="menu-outline"></ion-icon>
@@ -61,28 +62,31 @@ by Kolade Chris (https://github.com/Ksound22/developer-portfolio/) -->
 	</i>
 
 	<!-- Hero Section -->
-	<section class="hero" id="about">
+	<section class="hero">
 		<img
 			src="assets/images/me.jfif"
 			alt="ben-weatherall"
 			loading="lazy"
 			class="hero-img"
 		/>
-		<div class="bio animate__animated animate__shakeX">
+		<div class="bio animate__animated animate__shakeX" id="personality">
 			<h2 class="bio-title">Personality</h2>
 			<div class="bio-text" id="about-me-personality"></div>
 		</div>
 	</section>
 
 	<!-- More about -->
-	<section class="more-about">
-		<h2 class="bio-title">Career</h2>
-		<div class="projects-container-vertical">
-			<div class="project-container-wide project-card">
+	<section class="more-about-container" id="career">
+		<div class="bio more-about">
+			<h2 class="bio-title">Career</h2>
 			<div class="bio-text" id="about-me-career"></div>
-		</div>	
 		</div>
 	</section>
+
+	<!--
+	<h2 class="bio-title">Career</h2>
+	<div class="bio-text" id="about-me-career"></div>
+	-->
 
 	<!-- Education section -->
 	<section class="education">
@@ -91,7 +95,7 @@ by Kolade Chris (https://github.com/Ksound22/developer-portfolio/) -->
 	</section>
 
 	<!-- Skills section -->
-	<section class="projects" id="skills">
+	<section class="proficiencies" id="skills">
 		<h2 class="projects-title">Proficiencies</h2>
 		<div class="projects-container">
 			<div class="project-container project-card">
