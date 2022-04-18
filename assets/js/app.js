@@ -90,38 +90,45 @@ function BuildProjects(path){
   $.getJSON(path, function(json) {
     json['projects'].forEach((project) => {
       $('#projects-container').append(
-      `<div class="all-project-container project-card" id=${project['section-title']}>
-      <div class="project-card-left">
+      `<div class="project" id=${project['section-title']}>
+      <div class="project-left">
       ${'image' in project ? `
+        <div class="left-highlight">
         <img
           src=${project['image']}
           alt=${project['alt-text']}
           loading="lazy"
-          class="all-project-pic"
-        />` : ``}
+        />
+        </div>` : ``}
         ${'video' in project ? `
+        <div class="left-highlight">
         <video autoplay="true" loop style="max-width: 65%; height: auto;">
           <source src="${project['video']['video']}" type="video/mp4">
-        </video>` : ``}
-        <p>
-          <strong>Year: </strong>${project['start-year']}${project['on-going']? '-' : ''}</br>
-          <strong>Organisation: </strong>${project['organisation']}</br>
-          ${'languages' in project ? `
-          <strong>Languages: </strong> ${project['languages'].join(', ')}
-          </br>` : ``}
-          ${'technologies' in project ? `
-          <strong>Technologies: </strong> ${project['technologies'].join(', ')}
-          </br>` : ``}
-          ${'links' in project ? `
-          <strong>Links: </strong></br>
-          ${BuildLinkElement(project['links'])}` : ``}
-        </p>
+        </video>
+        </div>` : ``}
+        <div class="left-text">
+          <p>
+            <strong>Year: </strong>${project['start-year']}${project['on-going']? '-' : ''}</br>
+            <strong>Organisation: </strong>${project['organisation']}</br>
+            ${'languages' in project ? `
+            <strong>Languages: </strong> ${project['languages'].join(', ')}
+            </br>` : ``}
+            ${'technologies' in project ? `
+            <strong>Technologies: </strong> ${project['technologies'].join(', ')}
+            </br>` : ``}
+            ${'links' in project ? `
+            <strong>Links: </strong></br>
+            ${BuildLinkElement(project['links'])}` : ``}
+          </p>
+        </div>
       </div>
-      <div class="project-card-right">
-        <h3 class="all-project-title">${project['title']}</h3>
-        <p class="all-project-details">
-        ${project['details']} 
-        </p>
+      <div class="project-right">
+        <h3>${project['title']}</h3>
+        <div class="left-text">
+          <p class="all-project-details">
+            ${project['details']} 
+          </p>
+        </div>
       </div>
       </div>`);
       
