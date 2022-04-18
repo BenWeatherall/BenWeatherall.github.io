@@ -72,7 +72,6 @@
 		},
 		{
 			"section-title": "voxon-dashboard",
-			"image": "assets/images/Voxon-dashboard.png",
 			"alt-text": "Voxon-dashboard",
 			"start-year": "2018",
 			"on-going": false,
@@ -83,7 +82,7 @@
 		},
 		{
 			"section-title": "sdk-distribution",
-			"image": "assets/images/SDK-distribution.png",
+			"image": "assets/images/sdkdistribution.png",
 			"alt-text": "SDK-distribution",
 			"start-year": "2018",
 			"on-going": true,
