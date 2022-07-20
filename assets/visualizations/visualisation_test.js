@@ -28,12 +28,16 @@ looker.plugins.visualizations.add({
     element.innerHTML = `
       <style>
         .hello-world-vis {
-          /* Vertical centering */
           height: 100%;
+          border-radius: 25px;
+          border: 2px solid #73AD21;
+          padding: 20px; 
           display: flex;
           flex-direction: column;
           justify-content: center;
           text-align: center;
+        }
+
         }
         .hello-world-text-large {
           font-size: 72px;
@@ -71,32 +75,31 @@ looker.plugins.visualizations.add({
 
     // Clear any errors from previous updates
     this.clearErrors();
-    this.addError({ title: "Work in Progress", message: "This chart is currently in DEVELOPMENT and will not produce a visualisation." });
-    return;
 
-    /*
     // Throw some errors and exit if the shape of the data isn't what this chart needs
     if (queryResponse.fields.dimensions.length == 0) {
       this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
       return;
     }
 
-    // Grab the first cell of the data
-    var firstRow = data[0];
-    var firstCell = firstRow[queryResponse.fields.dimensions[0].name];
+    done();
+    /*
+// Grab the first cell of the data
+var firstRow = data[0];
+var firstCell = firstRow[queryResponse.fields.dimensions[0].name];
 
-    // Insert the data into the page
-    this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
+// Insert the data into the page
+this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
 
-    // Set the size to the user-selected size
-    if (config.font_size == "small") {
-      this._textElement.className = "hello-world-text-small";
-    } else {
-      this._textElement.className = "hello-world-text-large";
-    }
+// Set the size to the user-selected size
+if (config.font_size == "small") {
+  this._textElement.className = "hello-world-text-small";
+} else {
+  this._textElement.className = "hello-world-text-large";
+}
 
-    // We are done rendering! Let Looker know.
-    done()
-    */
-  }
+// We are done rendering! Let Looker know.
+done()
+  * /
+}
 });
