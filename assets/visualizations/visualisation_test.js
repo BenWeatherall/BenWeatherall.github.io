@@ -84,22 +84,26 @@ looker.plugins.visualizations.add({
 
     done();
     /*
-// Grab the first cell of the data
-var firstRow = data[0];
-var firstCell = firstRow[queryResponse.fields.dimensions[0].name];
 
-// Insert the data into the page
-this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
+    // Iterate through each pivot, generate child divs? Though that wouldn't allow for broadening unless we dip
+    // in and out of each parent from route :(
+    for(var pivotIdx = 0; pivotIdx < queryResponse.fields.pivots.length; pivotIdx += 1) {} 
+    // Grab the first cell of the data
+    var firstRow = data[0];
+    var firstCell = firstRow[queryResponse.fields.dimensions[0].name];
 
-// Set the size to the user-selected size
-if (config.font_size == "small") {
-  this._textElement.className = "hello-world-text-small";
-} else {
-  this._textElement.className = "hello-world-text-large";
-}
+    // Insert the data into the page
+    this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
 
-// We are done rendering! Let Looker know.
-done()
-  * /
-}
+    // Set the size to the user-selected size
+    if (config.font_size == "small") {
+    this._textElement.className = "hello-world-text-small";
+    } else {
+    this._textElement.className = "hello-world-text-large";
+    }
+
+    // We are done rendering! Let Looker know.
+    done()
+    */
+  }
 });
