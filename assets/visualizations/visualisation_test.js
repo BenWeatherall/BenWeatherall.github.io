@@ -18,6 +18,11 @@ looker.plugins.visualizations.add({
   },
   // Set up the initial state of the visualization
   create: function (element, config) {
+    console.log('create');
+    console.log('create::element');
+    console.log(element);
+    console.log('create::config');
+    console.log(config)
 
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
@@ -50,9 +55,26 @@ looker.plugins.visualizations.add({
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
 
+    console.log('updateAsync');
+    console.log('updateAsync::data');
+    console.log(data);
+    console.log('updateAsync::element');
+    console.log(element);
+    console.log('updateAsync::config');
+    console.log(config);
+    console.log('updateAsync::queryResponse');
+    console.log(queryResponse);
+    console.log('updateAsync::details');
+    console.log(details);
+    console.log('updateAsync::done');
+    console.log(done);
+
     // Clear any errors from previous updates
     this.clearErrors();
+    this.addError({ title: "Work in Progress", message: "This chart is currently in DEVELOPMENT and will not produce a visualisation." });
+    return;
 
+    /*
     // Throw some errors and exit if the shape of the data isn't what this chart needs
     if (queryResponse.fields.dimensions.length == 0) {
       this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
@@ -75,5 +97,6 @@ looker.plugins.visualizations.add({
 
     // We are done rendering! Let Looker know.
     done()
+    */
   }
 });
