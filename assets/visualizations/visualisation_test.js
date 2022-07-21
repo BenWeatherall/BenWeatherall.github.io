@@ -55,6 +55,10 @@ looker.plugins.visualizations.add({
           -webkit-border-top-right-radius:5px;
           -webkit-border-top-left-radius:5px;
       }
+
+      .pivot-title h2{
+        margin-top: 0px;
+      }
       
       .metric {
         display: flex;
@@ -105,7 +109,7 @@ looker.plugins.visualizations.add({
       pivotElement.className = "pivot";
 
       pivotTitle = pivotElement.appendChild(document.createElement("div"));
-      pivotTitle.className = "pivotTitle";
+      pivotTitle.className = "pivot-title";
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
 
       // iterate over metrics
