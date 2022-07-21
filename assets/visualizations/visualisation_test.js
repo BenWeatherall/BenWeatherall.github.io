@@ -124,10 +124,12 @@ looker.plugins.visualizations.add({
       pivotTitle.className = "pivot-title";
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
 
+      // Apply Filter Styling
       const crossfilter = LookerCharts.Utils.getCrossfilterSelection(null, queryResponse.pivots[pivotIdx]);
 
       if (details.crossfilterEnabled && crossfilter === 1) {
         pivotTitle.classList.toggle("selected", true);
+        pivotElement.classList.toggle("selected", true);
       }
 
       // Add an onclick behaviour to apply a crossfilter based on this value
