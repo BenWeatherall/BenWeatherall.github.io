@@ -112,19 +112,19 @@ looker.plugins.visualizations.add({
 
     // d3.select('.pivot-title').style("color", "blue");
 
+    // iterate over metrics for sum
     // iterate over metrics
-    for (value in queryResponse.totals_data) {
-      console.log(value);
-      var metricName = value;
-      var metricLabel = queryResponse.totals_data[value].html;
+    for (var metricIdx = 0; metricIdx < queryResponse.fields.measures.length; metricIdx += 1) {
+      var metricName = queryResponse.fields.measures[metricIdx].name;
+      var metricLabel = queryResponse.fields.measures[metricIdx].label_short;
 
       var metricElement = sumElement.appendChild(document.createElement("div"));
       metricElement.className = "metric";
 
       metricElement.innerHTML = `
-        <h3>${metricName}</h3>
-        <h4>${metricLabel}</h4>
-        `;
+            <h3>${queryResponse.totals_data[metricName].html}</h3>
+            <h4>${metricLabel}</h4>
+            `;
     }
 
     // Generate Barchart
