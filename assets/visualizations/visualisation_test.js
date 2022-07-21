@@ -96,8 +96,8 @@ looker.plugins.visualizations.add({
       event: evt,
     });
 
-    console.log(LookerCharts.Utils.getCrossfilterSelection(this));
-    console.log(LookerCharts.Utils.getCrossfilterSelection(this.key));
+    console.log(LookerCharts.Utils.getCrossfilterSelection(null, this));
+    console.log(LookerCharts.Utils.getCrossfilterSelection(null, this.key));
   },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
