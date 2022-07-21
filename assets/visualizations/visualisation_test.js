@@ -75,28 +75,15 @@ looker.plugins.visualizations.add({
     `;
 
     // Create a parent element to house our pivots.
-    this._container = element.appendChild(document.createElement("div"));
-    this._container.className = "hello-world-vis";
+    var container = element.appendChild(document.createElement("div"));
+    container.className = "hello-world-vis";
 
+    this._container = container.appendChild(document.createElement("div"));
   },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
-    /*
-    console.log('updateAsync');
-    console.log('updateAsync::data');
-    console.log(data);
-    console.log('updateAsync::element');
-    console.log(element);
-    console.log('updateAsync::config');
-    console.log(config);
-    console.log('updateAsync::queryResponse');
-    console.log(queryResponse);
-    console.log('updateAsync::details');
-    console.log(details);
-    console.log('updateAsync::done');
-    console.log(done);
-    */
 
+    this._container.innerHTML = "";
     // Clear any errors from previous updates
     this.clearErrors();
 
@@ -109,7 +96,6 @@ looker.plugins.visualizations.add({
 
     var pivotCount = queryResponse.fields.pivots.length;
 
-
     if (pivotCount != 1) { // We aren't pivoting; handle data differently
       // Won't support for now
       this.addError({ title: "No Pivots", message: "This chart requires one pivot dimension." });
@@ -121,10 +107,10 @@ looker.plugins.visualizations.add({
     for (var pivotIdx = 0; pivotIdx < queryResponse.pivots.length; pivotIdx += 1) {
       var pivotName = queryResponse.pivots[pivotIdx].key;
 
-      var pivotElement = this._container.append(document.createElement("div"));
+      var pivotElement = this._container.appendChild(document.createElement("div"));
       pivotElement.className = "pivot";
 
-      pivotTitle = pivotElement.append(document.createElement("div"));
+      pivotTitle = pivotElement.appendChild(document.createElement("div"));
       pivotTitle.className = "pivotTitle";
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
 
@@ -133,7 +119,7 @@ looker.plugins.visualizations.add({
         var metricName = queryResponse.fields.measures[metricIdx].name;
         var metricLabel = queryResponse.fields.measures[metricIdx].label_short;
 
-        var metricElement = pivotElement.append(document.createElement("div"));
+        var metricElement = pivotElement.appendChild(document.createElement("div"));
         metricElement.className = "metric";
 
         metricElement.innerHTML = `
@@ -143,9 +129,6 @@ looker.plugins.visualizations.add({
       }
     }
 
-    element.innerHTML = this._container;
-
-    console.log(element.innerHTML);
     // We are done rendering! Let Looker know.
     done()
   }
