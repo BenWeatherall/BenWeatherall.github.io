@@ -90,16 +90,14 @@ looker.plugins.visualizations.add({
     this._container.className = "hello-world-vis"
   },
   crossFilter: function (evt) {
-    console.log("evt");
-    console.log(evt);
-
-    console.log("pivot");
-    console.log(this);
 
     LookerCharts.Utils.toggleCrossfilter({
       pivot: this,
       event: evt,
     });
+
+    console.log(LookerCharts.Utils.getCrossfilterSelection(this));
+    console.log(LookerCharts.Utils.getCrossfilterSelection(this.key));
   },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
@@ -132,9 +130,10 @@ looker.plugins.visualizations.add({
       pivotTitle.className = "pivot-title";
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
 
-      const crossfilter = LookerCharts.Utils.getCrossfilterSelection(queryResponse.pivots[pivotIdx])
+      const crossfilter = LookerCharts.Utils.getCrossfilterSelection(queryResponse.pivots[pivotIdx]);
+
       if (details.crossfilterEnabled && crossfilter === 1) {
-        pivotTitle.classList.add('selected');
+        pivotTitle.classList.toggle("selected", true);
       }
 
       // Add an onclick behaviour to apply a crossfilter based on this value
