@@ -121,10 +121,10 @@ looker.plugins.visualizations.add({
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
 
-    if (options.colorPreSet == 'c') {
-      var colorSettings = options.colorRange || ['white', 'green', 'red']; // put a default in
+    if (this.options.colorPreSet == 'c') {
+      var colorSettings = this.options.colorRange || ['white', 'green', 'red']; // put a default in
     } else {
-      var colorSettings = options.colorPreSet.split(",");
+      var colorSettings = this.options.colorPreSet.split(",");
     };
 
     console.log(colorSettings);
