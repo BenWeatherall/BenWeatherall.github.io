@@ -108,7 +108,7 @@ looker.plugins.visualizations.add({
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
 
       // iterate over metrics
-      for (var metrixIdx = 0; metrixIdx < queryResponse.fields.measures.length; metrixIdx += 1) {
+      for (var metricIdx = 0; metricIdx < queryResponse.fields.measures.length; metricIdx += 1) {
         var metricName = queryResponse.fields.measures[metricIdx].name;
         var metricLabel = queryResponse.fields.measures[metricIdx].label_short;
 
