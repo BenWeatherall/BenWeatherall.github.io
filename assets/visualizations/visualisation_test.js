@@ -50,10 +50,7 @@ looker.plugins.visualizations.add({
       }
       
       .pivot {
-          -moz-border-radius-topright:5px;
-          -moz-border-radius-topleft:5px;
-          -webkit-border-top-right-radius:5px;
-          -webkit-border-top-left-radius:5px;
+        border-radius: 10px;
       }
 
       .pivot-title h2{
@@ -70,10 +67,13 @@ looker.plugins.visualizations.add({
       
       .metric h3 {	
         font-size: 1em
+        margin-block-start: 0px;
+        margin-block-end: 0px;
       }
       
       .metric h4 {
         font-size: .75em
+        margin-block-start: 0.25em;
       }
       </style>
     `;
