@@ -102,6 +102,7 @@ looker.plugins.visualizations.add({
 
     console.log(data);
     console.log(queryResponse);
+    console.log(details);
 
     this._container.innerHTML = "";
     // Clear any errors from previous updates
