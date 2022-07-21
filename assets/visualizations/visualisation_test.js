@@ -66,13 +66,13 @@ looker.plugins.visualizations.add({
       } 
       
       .metric h3 {	
-        font-size: 1em
+        font-size: 1em;
         margin-block-start: 0px;
         margin-block-end: 0px;
       }
       
       .metric h4 {
-        font-size: .75em
+        font-size: .75em;
         margin-block-start: 0.25em;
       }
       </style>
