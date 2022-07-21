@@ -107,7 +107,7 @@ looker.plugins.visualizations.add({
     var sumElement = this._container.appendChild(document.createElement("div"));
     sumElement.className = "pivot";
 
-    sumTitle = pivotElement.appendChild(document.createElement("div"));
+    sumTitle = sumElement.appendChild(document.createElement("div"));
     sumTitle.className = "pivot-title";
     sumTitle.innerHTML = `<h2>${sumName}</h2>`;
 
@@ -118,7 +118,7 @@ looker.plugins.visualizations.add({
       var metricName = value;
       var metricLabel = queryResponse.totals_data[value].html;
 
-      var metricElement = pivotElement.appendChild(document.createElement("div"));
+      var metricElement = sumElement.appendChild(document.createElement("div"));
       metricElement.className = "metric";
 
       metricElement.innerHTML = `
