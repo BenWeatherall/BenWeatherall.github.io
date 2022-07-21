@@ -100,14 +100,13 @@ looker.plugins.visualizations.add({
       pivot: pivot,
       event: evt,
     });
-  }
-},
+  },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
 
-    console.log(data);
-    console.log(queryResponse);
-    console.log(details);
+    // console.log(data);
+    // console.log(queryResponse);
+    // console.log(details);
 
     this._container.innerHTML = "";
     // Clear any errors from previous updates
