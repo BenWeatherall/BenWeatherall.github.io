@@ -91,14 +91,41 @@ looker.plugins.visualizations.add({
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
 
-    console.log(data);
-    console.log(queryResponse);
-
     this._container.innerHTML = "";
     // Clear any errors from previous updates
     this.clearErrors();
 
+    if (Object.keys(queryResponse.totals_data).length < 1) {
+      // Won't support for now
+      this.addError({ title: "No totals", message: "This chart requires column totals." });
+      console.error("No Totals");
+      return;
+    }
     // Generate Tab for Totals (Sum)
+    var sumName = "Total";
+
+    var sumElement = this._container.appendChild(document.createElement("div"));
+    sumElement.className = "pivot";
+
+    sumTitle = pivotElement.appendChild(document.createElement("div"));
+    sumTitle.className = "pivot-title";
+    sumTitle.innerHTML = `<h2>${sumName}</h2>`;
+
+    valueKeys = Object.keys(queryResponse.totals_data)
+
+    // iterate over metrics
+    for (value in valueKeys) {
+      var metricName = value;
+      var metricLabel = queryResponse.totals_data[value].html;
+
+      var metricElement = pivotElement.appendChild(document.createElement("div"));
+      metricElement.className = "metric";
+
+      metricElement.innerHTML = `
+        <h3>${data[0][metricName][pivotName].rendered}</h3>
+        <h4>${metricLabel}</h4>
+        `;
+    }
 
     // Generate Barchart
 
