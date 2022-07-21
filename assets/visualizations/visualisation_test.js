@@ -139,7 +139,7 @@ looker.plugins.visualizations.add({
 
       // Add an onclick behaviour to apply a crossfilter based on this value
       if (details.crossfilterEnabled) {
-        pivotElement.onclick = this.crossFilter.bind(queryResponse.pivots[pivotIdx]);
+        pivotElement.onclick = (evt) => this.crossFilter.bind(this, queryResponse.pivots[pivotIdx]);
       }
 
       // iterate over metrics
