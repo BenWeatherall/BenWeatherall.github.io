@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 
 looker.plugins.visualizations.add({
   // Id and Label are legacy properties that no longer have any function besides documenting
@@ -110,6 +111,8 @@ looker.plugins.visualizations.add({
     sumTitle = sumElement.appendChild(document.createElement("div"));
     sumTitle.className = "pivot-title";
     sumTitle.innerHTML = `<h2>${sumName}</h2>`;
+
+    d3.select('.pivot-title').style("color", "blue");
 
     valueKeys = Object.keys(queryResponse.totals_data)
 
