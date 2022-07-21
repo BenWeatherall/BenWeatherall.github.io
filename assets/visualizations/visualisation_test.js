@@ -96,15 +96,9 @@ looker.plugins.visualizations.add({
       event: evt,
     });
 
-    console.log(LookerCharts.Utils.getCrossfilterSelection(null, this));
-    console.log(LookerCharts.Utils.getCrossfilterSelection(null, this.key));
   },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
-
-    // console.log(data);
-    // console.log(queryResponse);
-    // console.log(details);
 
     this._container.innerHTML = "";
     // Clear any errors from previous updates
@@ -130,7 +124,7 @@ looker.plugins.visualizations.add({
       pivotTitle.className = "pivot-title";
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
 
-      const crossfilter = LookerCharts.Utils.getCrossfilterSelection(queryResponse.pivots[pivotIdx]);
+      const crossfilter = LookerCharts.Utils.getCrossfilterSelection(null, queryResponse.pivots[pivotIdx]);
 
       if (details.crossfilterEnabled && crossfilter === 1) {
         pivotTitle.classList.toggle("selected", true);
