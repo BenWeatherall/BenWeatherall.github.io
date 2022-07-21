@@ -112,12 +112,8 @@ looker.plugins.visualizations.add({
 
     // d3.select('.pivot-title').style("color", "blue");
 
-    valueKeys = Object.keys(queryResponse.totals_data)
-
-    console.log(queryResponse.totals_data);
-
     // iterate over metrics
-    for (value in valueKeys) {
+    for (value in queryResponse.totals_data) {
       console.log(value);
       var metricName = value;
       var metricLabel = queryResponse.totals_data[value].html;
