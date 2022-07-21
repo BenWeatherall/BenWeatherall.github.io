@@ -75,6 +75,10 @@ looker.plugins.visualizations.add({
         font-size: .75em;
         margin-block-start: 0.25em;
       }
+
+      .selected h2 { 
+        background:#284a63;
+      }
       </style>
     `;
 
@@ -85,8 +89,19 @@ looker.plugins.visualizations.add({
     this._container = container.appendChild(document.createElement("div"));
     this._container.className = "hello-world-vis"
   },
+  crossFilter: function (details) {
+    if (details.crossfilterEnabled) {
+      LookerCharts.Utils.toggleCrossfilter({
+        row: d.row,
+        event: d3.event,
+      });
+    }
+  },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
+
+    console.log(data);
+    console.log(queryResponse);
 
     this._container.innerHTML = "";
     // Clear any errors from previous updates
@@ -111,6 +126,14 @@ looker.plugins.visualizations.add({
       pivotTitle = pivotElement.appendChild(document.createElement("div"));
       pivotTitle.className = "pivot-title";
       pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
+
+      const crossfilter = LookerCharts.Utils.getCrossfilterSelection(queryResponse.pivots[pivotIdx])
+      if (details.crossfilterEnabled && crossfilter === 1) {
+        pivotTitle.classList.add('selected');
+      }
+
+      // Add an onclick behaviour to apply a crossfilter based on this value
+      pivotElement.onclick = this.crossFilter.bind(queryResponse.pivots[pivotIdx]);
 
       // iterate over metrics
       for (var metricIdx = 0; metricIdx < queryResponse.fields.measures.length; metricIdx += 1) {
