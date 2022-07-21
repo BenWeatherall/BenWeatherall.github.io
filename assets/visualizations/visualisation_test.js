@@ -18,42 +18,65 @@ looker.plugins.visualizations.add({
   },
   // Set up the initial state of the visualization
   create: function (element, config) {
-    console.log('create');
-    console.log('create::element');
-    console.log(element);
-    console.log('create::config');
-    console.log(config)
 
     // Insert a <style> tag with some styles we'll use later.
     element.innerHTML = `
       <style>
-        .hello-world-vis {
-          height: 100%;
-          border-radius: 25px;
-          border: 2px solid #73AD21;
-          padding: 20px; 
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          text-align: center;
-        }
-
-        }
-        .hello-world-text-large {
-          font-size: 72px;
-        }
-        .hello-world-text-small {
-          font-size: 18px;
-        }
+      .hello-world-vis {
+        height: 100%;
+        border-radius: 25px;
+        border: 2px solid #73AD21;
+        padding: 20px; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: center;
+      }
+      
+      .pivot {
+        border:2px solid #0094ff;
+        width: 200px;
+      }
+      
+      .pivot h2 {
+        background:#0094ff;
+        color:white;
+        padding:10px;
+      }
+      
+      .pivot p {
+        color:#333;
+        padding:10px;
+      }
+      
+      .pivot {
+          -moz-border-radius-topright:5px;
+          -moz-border-radius-topleft:5px;
+          -webkit-border-top-right-radius:5px;
+          -webkit-border-top-left-radius:5px;
+      }
+      
+      .metric {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding:5px;
+      } 
+      
+      .metric h3 {	
+        font-size: 1em
+      }
+      
+      .metric h4 {
+        font-size: .75em
+      }
       </style>
     `;
 
-    // Create a container element to let us center the text.
-    var container = element.appendChild(document.createElement("div"));
-    container.className = "hello-world-vis";
-
-    // Create an element to contain the text.
-    this._textElement = container.appendChild(document.createElement("div"));
+    // Create a parent element to house our pivots.
+    this._container = element.appendChild(document.createElement("div"));
+    this._container.className = "hello-world-vis";
 
   },
   // Render in response to the data or settings changing
@@ -82,28 +105,42 @@ looker.plugins.visualizations.add({
       return;
     }
 
-    done();
-    /*
+    var pivotCount = queryResponse.fields.pivots.length;
 
-    // Iterate through each pivot, generate child divs? Though that wouldn't allow for broadening unless we dip
-    // in and out of each parent from route :(
-    for(var pivotIdx = 0; pivotIdx < queryResponse.fields.pivots.length; pivotIdx += 1) {} 
-    // Grab the first cell of the data
-    var firstRow = data[0];
-    var firstCell = firstRow[queryResponse.fields.dimensions[0].name];
 
-    // Insert the data into the page
-    this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell);
+    if (pivotCount != 1) { // We aren't pivoting; handle data differently
+      // Won't support for now
+      this.addError({ title: "No Pivots", message: "This chart requires one pivot dimension." });
+      return;
+    }
 
-    // Set the size to the user-selected size
-    if (config.font_size == "small") {
-    this._textElement.className = "hello-world-text-small";
-    } else {
-    this._textElement.className = "hello-world-text-large";
+    // Iterate through pivots and generate each pivot div from there
+    for (var pivotIdx = 0; pivotIdx < queryResponse.pivots.length; pivotIdx += 1) {
+      var pivotName = queryResponse.pivots[pivotIdx].key;
+
+      var pivotElement = this._container.append(document.createElement("div"));
+      pivotElement.className = "pivot";
+
+      pivotTitle = pivotElement.append(document.createElement("div"));
+      pivotTitle.className = "pivotTitle";
+      pivotTitle.innerHTML = `<h2>${pivotName}</h2>`;
+
+      // iterate over metrics
+      for (var metrixIdx = 0; metrixIdx < queryResponse.fields.measures.length; metrixIdx += 1) {
+        var metricName = queryResponse.fields.measures[metricIdx].name;
+        var metricLabel = queryResponse.fields.measures[metricIdx].label_short;
+
+        var metricElement = pivotElement.append(document.createElement("div"));
+        metricElement.className = "metric";
+
+        metricElement.innerHTML = `
+        <h3>${metricLabel}</h3>
+        <h4>${data[0][metricName][pivotName].rendered}</h4>
+        `;
+      }
     }
 
     // We are done rendering! Let Looker know.
     done()
-    */
   }
 });
