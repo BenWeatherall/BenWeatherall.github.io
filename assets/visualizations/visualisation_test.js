@@ -113,8 +113,11 @@ looker.plugins.visualizations.add({
 
     valueKeys = Object.keys(queryResponse.totals_data)
 
+    console.log(queryResponse.totals_data);
+
     // iterate over metrics
     for (value in valueKeys) {
+      console.log(value);
       var metricName = value;
       var metricLabel = queryResponse.totals_data[value].html;
 
