@@ -121,25 +121,6 @@ looker.plugins.visualizations.add({
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
 
-    if (config.colorPreSet == 'c') {
-      var colorSettings = config.colorRange || ['white', 'green', 'red']; // put a default in
-    } else {
-      console.log(config.colorPreSet);
-      if (config.colorPreSet) {
-        var colorSettings = config.colorPreSet.split(",");
-      }
-      else {
-        var colorSettings = "white";
-      }
-    };
-
-    console.log(colorSettings);
-
-    if (colorSettings[0]) {
-      this._container.style.color = colorSettings[0];
-    }
-
-
     this._container.innerHTML = "";
     // Clear any errors from previous updates
     this.clearErrors();
@@ -153,6 +134,7 @@ looker.plugins.visualizations.add({
       return;
     }
 
+    colors = ['']
     // Iterate through pivots and generate each pivot div from there
     for (var pivotIdx = 0; pivotIdx < queryResponse.pivots.length; pivotIdx += 1) {
       var pivotName = queryResponse.pivots[pivotIdx].key;
