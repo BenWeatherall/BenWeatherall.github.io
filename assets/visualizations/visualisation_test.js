@@ -124,7 +124,13 @@ looker.plugins.visualizations.add({
     if (config.colorPreSet == 'c') {
       var colorSettings = config.colorRange || ['white', 'green', 'red']; // put a default in
     } else {
-      var colorSettings = config.colorPreSet.split(",");
+      console.log(config.colorPreSet);
+      if (config.colorPreSet) {
+        var colorSettings = config.colorPreSet.split(",");
+      }
+      else {
+        var colorSettings = "white";
+      }
     };
 
     console.log(colorSettings);
