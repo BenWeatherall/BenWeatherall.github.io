@@ -81,7 +81,7 @@ looker.plugins.visualizations.add({
   },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
-
+    /*
     console.log('updateAsync');
     console.log('updateAsync::data');
     console.log(data);
@@ -95,6 +95,7 @@ looker.plugins.visualizations.add({
     console.log(details);
     console.log('updateAsync::done');
     console.log(done);
+    */
 
     // Clear any errors from previous updates
     this.clearErrors();
