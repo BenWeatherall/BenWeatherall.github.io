@@ -89,14 +89,19 @@ looker.plugins.visualizations.add({
     this._container = container.appendChild(document.createElement("div"));
     this._container.className = "hello-world-vis"
   },
-  crossFilter: function (details) {
-    if (details.crossfilterEnabled) {
-      LookerCharts.Utils.toggleCrossfilter({
-        row: d.row,
-        event: d3.event,
-      });
-    }
-  },
+  crossFilter: function (evt, pivot) {
+    print("evt");
+    print(evt);
+
+    print("pivot");
+    print(pivot);
+
+    LookerCharts.Utils.toggleCrossfilter({
+      pivot: pivot,
+      event: evt,
+    });
+  }
+},
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
 
