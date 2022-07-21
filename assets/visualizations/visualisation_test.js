@@ -103,6 +103,7 @@ looker.plugins.visualizations.add({
     // Throw some errors and exit if the shape of the data isn't what this chart needs
     if (queryResponse.fields.dimensions.length == 0) {
       this.addError({ title: "No Dimensions", message: "This chart requires dimensions." });
+      console.logError("No Dimensions");
       return;
     }
 
@@ -112,6 +113,7 @@ looker.plugins.visualizations.add({
     if (pivotCount != 1) { // We aren't pivoting; handle data differently
       // Won't support for now
       this.addError({ title: "No Pivots", message: "This chart requires one pivot dimension." });
+      console.logError("No Pivots");
       return;
     }
 
@@ -141,6 +143,9 @@ looker.plugins.visualizations.add({
       }
     }
 
+    element.innerHTML = this._container;
+
+    console.log(element.innerHTML);
     // We are done rendering! Let Looker know.
     done()
   }
