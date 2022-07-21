@@ -76,9 +76,10 @@ looker.plugins.visualizations.add({
 
     // Create a parent element to house our pivots.
     var container = element.appendChild(document.createElement("div"));
-    container.className = "hello-world-vis";
+    // container.className = "hello-world-vis";
 
     this._container = container.appendChild(document.createElement("div"));
+    this._container.className = "hello-world-vis"
   },
   // Render in response to the data or settings changing
   updateAsync: function (data, element, config, queryResponse, details, done) {
