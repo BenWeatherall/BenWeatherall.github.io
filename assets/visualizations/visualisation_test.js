@@ -89,15 +89,15 @@ looker.plugins.visualizations.add({
     this._container = container.appendChild(document.createElement("div"));
     this._container.className = "hello-world-vis"
   },
-  crossFilter: function (evt, pivot) {
+  crossFilter: function (evt) {
     console.log("evt");
     console.log(evt);
 
     console.log("pivot");
-    console.log(pivot);
+    console.log(this);
 
     LookerCharts.Utils.toggleCrossfilter({
-      pivot: pivot,
+      pivot: this,
       event: evt,
     });
   },
@@ -139,7 +139,7 @@ looker.plugins.visualizations.add({
 
       // Add an onclick behaviour to apply a crossfilter based on this value
       if (details.crossfilterEnabled) {
-        pivotElement.onclick = (evt) => this.crossFilter.bind(this, queryResponse.pivots[pivotIdx]);
+        pivotElement.onclick = (evt) => this.crossFilter.bind(queryResponse.pivots[pivotIdx]);
       }
 
       // iterate over metrics
