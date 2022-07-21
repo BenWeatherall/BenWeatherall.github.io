@@ -122,7 +122,7 @@ looker.plugins.visualizations.add({
       metricElement.className = "metric";
 
       metricElement.innerHTML = `
-        <h3>${data[0][metricName][pivotName].rendered}</h3>
+        <h3>${metricName}</h3>
         <h4>${metricLabel}</h4>
         `;
     }
