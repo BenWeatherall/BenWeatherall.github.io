@@ -16,29 +16,29 @@ looker.plugins.visualizations.add({
         height: 100%;
         border-radius: 25px;
         border: 2px solid #73AD21;
-        padding: 20px; 
+        padding: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         text-align: center;
       }
-      
+
       .pivot {
         border:2px solid #0094ff;
         width: 200px;
       }
-      
+
       .pivot h2 {
         background:#0094ff;
         color:white;
         padding:10px;
       }
-      
+
       .pivot p {
         color:#333;
         padding:10px;
       }
-      
+
       .pivot {
         border-radius: 10px;
       }
@@ -46,27 +46,27 @@ looker.plugins.visualizations.add({
       .pivot-title h2{
         margin-top: 0px;
       }
-      
+
       .metric {
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         padding:5px;
-      } 
-      
-      .metric h3 {	
+      }
+
+      .metric h3 {
         font-size: 1em;
         margin-block-start: 0px;
         margin-block-end: 0px;
       }
-      
+
       .metric h4 {
         font-size: .75em;
         margin-block-start: 0.25em;
       }
 
-      .selected h2 { 
+      .selected h2 {
         background:#284a63;
       }
       </style>
@@ -129,7 +129,7 @@ looker.plugins.visualizations.add({
       }
 
       // iterate over metrics
-      for (var metricIdx = 0; metricIdx < queryResponse.fields.measures.length; metricIdx += 1) {
+      for (var metricIdx = 0; metricIdx < queryResponse.fields.measure_like.length; metricIdx += 1) {
         var metricName = queryResponse.fields.measures[metricIdx].name;
         var metricLabel = queryResponse.fields.measures[metricIdx].label_short;
 
