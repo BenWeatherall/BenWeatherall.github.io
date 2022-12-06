@@ -128,10 +128,12 @@ looker.plugins.visualizations.add({
         pivotElement.onclick = this.crossFilter.bind(queryResponse.pivots[pivotIdx]);
       }
 
+      console.log(queryResponse.fields);
+
       // iterate over metrics
       for (var metricIdx = 0; metricIdx < queryResponse.fields.measure_like.length; metricIdx += 1) {
-        var metricName = queryResponse.fields.measures[metricIdx].name;
-        var metricLabel = queryResponse.fields.measures[metricIdx].label_short;
+        var metricName = queryResponse.fields.measure_like[metricIdx].name;
+        var metricLabel = queryResponse.fields.measure_like[metricIdx].label_short;
 
         var metricElement = pivotElement.appendChild(document.createElement("div"));
         metricElement.className = "metric";
